@@ -72,3 +72,4 @@ group :test do
 end
 
 gem 'faraday', '~> 2.7', '>= 2.7.6'
+gem 'dotenv', '~> 2.8', '>= 2.8.1'
