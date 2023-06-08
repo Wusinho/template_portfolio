@@ -18,37 +18,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code:wght@400;600&display=swap');
 @import "colors";
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  margin: 50px 200px 0 150px;
-  h2 {
-    margin: 0;
-    font-weight: 600;
-  }
-  .nav__link {
-    color: white;
-    text-decoration: none;
-    span {
-      display: inline-block;
-      position: relative;
-      font-size: 18px;
-    }
-    span::before {
-      content: '#';
-      color: $primary_color;
-      padding-left: 20px;
-    }
-  }
-}
-
-.cta {
-  text-decoration: none;
-  color: $font;
-  padding: 8px 20px;
-  border: 1px solid $primary_color;
-}
+@import "nav";
 
 body {
   font-family: 'Fira Code', monospace;
@@ -57,83 +27,6 @@ body {
   line-height: 1.8em;
 }
 
-
-.hero__container {
-  margin: 80px 150px;
-  display: flex;
-}
-
-.hero__container div:nth-child(2) {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-right: 30px;
-  p {
-    color: $grey;
-    margin: 30px 0;
-  }
-}
-
-.hero__container div:last-child {
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
-.hero__container div {
-  width: 50vw;
-}
-
-.hero__image {
-  border: 10px solid $font;
-  border-radius: 50%;
-  animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
-
-}
-
-@keyframes blur-in {
-  0% {
-    filter: blur(10px);
-  }
-  100% {
-    filter: blur(0);
-  }
-}
-
-@keyframes pixelate {
-  0% {
-    border-width: 100px;
-  }
-  100% {
-    border-width: 10px;
-  }
-}
-
-.hero__name .name {
-  display: inline-block;
-  opacity: 1;
-  animation: fade-in 0.1s ease-in, scale-down 1s linear;
-  color: $primary_color;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes scale-down {
-  from {
-    transform: scale(4);
-  }
-  to {
-    transform: scale(1);
-  }
-}
 
 
 .d-none {

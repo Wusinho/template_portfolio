@@ -1,0 +1,25 @@
+@import "colors";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 200px 0 150px;
+  h2 {
+    margin: 0;
+    font-weight: 600;
+  }
+  .nav__link {
+    color: white;
+    text-decoration: none;
+    span {
+      display: inline-block;
+      position: relative;
+      font-size: 18px;
+    }
+    span::before {
+      content: '#';
+      color: $primary_color;
+      padding-left: 20px;
+    }
+  }
+}

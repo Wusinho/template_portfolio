@@ -1,0 +1,43 @@
+@import "colors";
+
+.cta {
+  text-decoration: none;
+  color: $font;
+  padding: 8px 20px;
+  border: 1px solid $primary_color;
+  transition: border-color 1s ease-in-out;
+}
+
+.cta:hover {
+  animation: border-disappear 1s linear forwards;
+}
+
+@keyframes border-disappear {
+  0% {
+    border-top-color: transparent;
+  }
+  25% {
+    border-right-color: transparent;
+  }
+  50% {
+    border-bottom-color: transparent;
+  }
+  75% {
+    border-left-color: transparent;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+@keyframes border-appear {
+  0% {
+    border-color: transparent;
+  }
+  75% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: $primary_color;
+  }
+}

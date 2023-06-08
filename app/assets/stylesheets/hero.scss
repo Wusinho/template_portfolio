@@ -1,0 +1,77 @@
+@import "colors";
+
+.hero__container {
+  margin: 80px 150px;
+  display: flex;
+}
+
+.hero__container div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 30px;
+  p {
+    color: $grey;
+    margin: 30px 0;
+  }
+}
+
+.hero__container div:last-child {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero__container div {
+  width: 50vw;
+}
+
+.hero__image {
+  border: 10px solid $font;
+  border-radius: 50%;
+  animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
+}
+
+.hero__name .name {
+  display: inline-block;
+  opacity: 1;
+  animation: fade-in 0.1s ease-in, scale-down 1s linear;
+  color: $primary_color;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+
+@keyframes pixelate {
+  0% {
+    border-width: 100px;
+  }
+  100% {
+    border-width: 10px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-down {
+  from {
+    transform: scale(4);
+  }
+  to {
+    transform: scale(1);
+  }
+}
