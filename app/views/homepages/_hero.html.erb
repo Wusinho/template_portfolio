@@ -1,9 +1,11 @@
   <div class="d-none" data-name-target="name" ><%= name_list(@user[:name]) %></div>
   <div>
-    <h2 class="hero__name">Hello, My name is
-      <span class="name" data-name-target="replace">Jhon Doe</span>
+    <div>
+      <h2 class="hero__name">Hello, My name is
+        <span class="name" data-name-target="replace">Jhon Doe</span>
+      </h2>
       <%= link_to 'Know me !!', @cv, target: '_blank', class: cta %>
-    </h2>
+    </div>
   </div>
   <div>
     <%= image_tag @user[:avatar_url], class: 'hero__image' %>
