@@ -13,19 +13,30 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 
 
 .hero__container {
     display: flex;
 }
 
+.hero__container div:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
 .hero__container div {
     width: 50vw;
 }
 
-.hero__name .span {
+.hero__name .name {
+    display: inline-block;
     opacity: 1;
-    animation: fade-in 0.1s ease-in;
+    animation: fade-in 0.1s ease-in, scale-down 1s linear;
 }
 
 @keyframes fade-in {
@@ -36,6 +47,16 @@
         opacity: 1;
     }
 }
+
+@keyframes scale-down {
+    from {
+        transform: scale(4);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 
 .d-none {
     display: none;

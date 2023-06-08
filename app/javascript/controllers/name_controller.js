@@ -23,11 +23,11 @@ export default class extends Controller {
       const newSpanElement = document.createElement('span');
       newSpanElement.setAttribute('data-name-target', 'replace');
       newSpanElement.innerHTML = name;
-      newSpanElement.classList.add('span');
+      newSpanElement.classList.add('name');
 
       parentElement.replaceChild(newSpanElement, this.replaceTarget);
 
       index++;
-    }, 100);
+    }, 300);
   }
 }
