@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+
+.hero__container {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}

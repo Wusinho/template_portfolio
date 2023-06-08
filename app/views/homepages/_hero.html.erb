@@ -1,0 +1,8 @@
+<div class="hero__container" data-controller="name">
+  <h2 class="hero__name ">Hello, My name is
+    <span class="d-none" data-name-target="name">
+      <%= name_list(user[:name]) %>
+    </span>
+  </h2>
+  <%= image_tag user[:avatar_url] %>
+</div>

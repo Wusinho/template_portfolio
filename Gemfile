@@ -72,4 +72,5 @@ group :test do
 end
 
 gem 'faraday', '~> 2.7', '>= 2.7.6'
-gem 'dotenv', '~> 2.8', '>= 2.8.1'
+gem 'dotenv-rails', groups: [:development, :test, :production]
+gem 'faker', '~> 3.2'
