@@ -74,3 +74,4 @@ end
 gem 'faraday', '~> 2.7', '>= 2.7.6'
 gem 'dotenv-rails', groups: [:development, :test, :production]
 gem 'faker', '~> 3.2'
+gem "font-awesome-sass", "~> 6.3.0"

@@ -13,23 +13,27 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code:wght@400;600&display=swap');
 @import "colors";
 
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 30px 200px 0 200px;
-  padding: 20px;
-
+  margin: 50px 200px 0 150px;
+  h2 {
+    margin: 0;
+    font-weight: 600;
+  }
   .nav__link {
     color: white;
     text-decoration: none;
     span {
       display: inline-block;
       position: relative;
+      font-size: 18px;
     }
     span::before {
       content: '#';
@@ -39,25 +43,29 @@ nav {
   }
 }
 
-
-
+.cta {
+  text-decoration: none;
+  color: $font;
+  padding: 8px 20px;
+  border: 1px solid $primary_color;
+}
 
 body {
-  font-family: 'Fira Code', sans-serif;
+  font-family: 'Fira Code', monospace;
   background-color: $back_ground_color;
   color: $font;
 }
 
 
 .hero__container {
-  margin-top: 120px;
+  margin-top: 80px;
+  margin-left: 150px;
   display: flex;
 }
 
 .hero__container div:nth-child(2) {
   display: flex;
   align-items: center;
-  margin-left: 150px;
 }
 
 .hero__container div {

@@ -4,4 +4,8 @@ module HomepagesHelper
     10.times { names << Faker::Name.name }
     names << name
   end
+
+  def cta
+    'cta'
+  end
 end

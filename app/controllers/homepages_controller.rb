@@ -9,6 +9,7 @@ class HomepagesController < ApplicationController
 
   def github_information
     @user = git_hub_info
+    @cv = ENV['GOOGLE_CV']
   end
 
 
