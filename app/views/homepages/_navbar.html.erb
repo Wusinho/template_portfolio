@@ -4,26 +4,30 @@
     <%= @user['name'] %>
   </h2>
   <div>
-    <%= link_to root_path, class: nav__link, data: {
+    <%= link_to root_path, class: nav__link + ' active', data: {
       action: 'click->scroll#scrollToSection',
+      scroll_target: 'navlinks',
       target: 'home'
     } do %>
       <span>home</span>
     <% end %>
     <%= link_to root_path, class: nav__link, data: {
       action: 'click->scroll#scrollToSection',
+      scroll_target: 'navlinks',
       target: 'projects'
     } do %>
       <span>projects</span>
     <% end %>
     <%= link_to root_path, class: nav__link, data: {
       action: 'click->scroll#scrollToSection',
+      scroll_target: 'navlinks',
       target: 'about-me'
     } do %>
       <span>about-me</span>
     <% end %>
     <%= link_to root_path, class: nav__link, data: {
       action: 'click->scroll#scrollToSection',
+      scroll_target: 'navlinks',
       target: 'contact-me'
     } do %>
       <span>contact-me</span>
