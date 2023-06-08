@@ -14,9 +14,12 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "colors";
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: $back_ground_color;
+    color: $font;
 }
 
 
@@ -37,6 +40,7 @@ body {
     display: inline-block;
     opacity: 1;
     animation: fade-in 0.1s ease-in, scale-down 1s linear;
+    color: $primary_color;
 }
 
 @keyframes fade-in {
