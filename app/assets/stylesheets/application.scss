@@ -18,7 +18,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code:wght@400;600&display=swap');
 @import "colors";
-@import "nav";
+@import "aside";
 
 body {
   font-family: 'Fira Code', monospace;
@@ -27,9 +27,17 @@ body {
   line-height: 1.8em;
 }
 
+.portfolio__container {
+  display: flex;
+}
+
+.portfolio__container > div:first-child {
+  width: 90vw;
+}
+
 .container {
   height: 100vh;
-  margin: 80px 150px;
+  margin: 150px 50px 0 150px;
   padding-top: 40px;
 }
 

@@ -1,15 +1,19 @@
-<div class="div" data-controller="scroll" data-action="scroll@window->scroll#onScroll">
-  <%= render 'navbar', user: @user %>
-  <div class="hero__container container" data-controller="name" data-scroll-target="home" id='home'>
-    <%= render 'hero', locals: { user: @user, cv: @cv } %>
+<div class="portfolio__container" data-controller="scroll" data-action="scroll@window->scroll#onScroll">
+  <div>
+    <div class="hero__container container" data-controller="name" data-scroll-target="home" id='home'>
+      <%= render 'hero', locals: { user: @user, cv: @cv } %>
+    </div>
+    <div class="container" data-scroll-target="projects" id='projects'>
+      <%= render 'projects' %>
+    </div>
+    <div class="container" data-scroll-target="about-me" id='about-me'>
+      <%= render 'about-me' %>
+    </div>
+    <div class="container" data-scroll-target="contact-me" id='contact-me'>
+      <%= render 'contact-me' %>
+    </div>
   </div>
-  <div class="container" data-scroll-target="projects" id='projects'>
-    <%= render 'projects' %>
-  </div>
-  <div class="container" data-scroll-target="about-me" id='about-me'>
-    <%= render 'about-me' %>
-  </div>
-  <div class="container" data-scroll-target="contact-me" id='contact-me'>
-    <%= render 'contact-me' %>
-  </div>
+  <aside>
+    <%= render 'aside', user: @user %>
+  </aside>
 </div>

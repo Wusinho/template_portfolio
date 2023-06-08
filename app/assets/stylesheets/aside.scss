@@ -1,15 +1,7 @@
 @import "colors";
 
-nav {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  margin: 50px 150px 0 150px;
-  h2 {
-    margin: 0;
-    font-weight: 600;
-  }
+aside {
+  width: 50px;
   .nav__link {
     color: $grey;
     text-decoration: none;
