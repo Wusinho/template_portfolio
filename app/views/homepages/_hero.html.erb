@@ -4,6 +4,9 @@
       <h2 class="hero__name">Hello, My name is
         <span class="name" data-name-target="replace">Jhon Doe</span>
       </h2>
+      <p>
+        <%= @user[:bio] %>
+      </p>
       <%= link_to 'Know me !!', @cv, target: '_blank', class: cta %>
     </div>
   </div>
