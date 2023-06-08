@@ -16,9 +16,11 @@
   }
 }
 
-.hero__container div:last-child {
+.hero__container div:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
   img {
-    width: 100%;
+    width: 90%;
     object-fit: cover;
   }
 }
