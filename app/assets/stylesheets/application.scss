@@ -14,83 +14,111 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code&display=swap');
 @import "colors";
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 200px 0 200px;
+  padding: 20px;
+
+  .nav__link {
+    color: white;
+    text-decoration: none;
+    span {
+      display: inline-block;
+      position: relative;
+    }
+    span::before {
+      content: '#';
+      color: $primary_color;
+      padding-left: 20px;
+    }
+  }
+}
+
+
+
+
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: $back_ground_color;
-    color: $font;
+  font-family: 'Fira Code', sans-serif;
+  background-color: $back_ground_color;
+  color: $font;
 }
 
 
 .hero__container {
-    display: flex;
+  margin-top: 120px;
+  display: flex;
 }
 
 .hero__container div:nth-child(2) {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  margin-left: 150px;
 }
 
 .hero__container div {
-    width: 50vw;
+  width: 50vw;
 }
 
 .hero__image {
-    border: 10px solid $font;
-    border-radius: 50%;
-    animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
+  border: 10px solid $font;
+  border-radius: 50%;
+  animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
 
 }
 
 @keyframes blur-in {
-    0% {
-        filter: blur(10px);
-    }
-    100% {
-        filter: blur(0);
-    }
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0);
+  }
 }
 
 @keyframes pixelate {
-    0% {
-        border-width: 100px;
-    }
-    100% {
-        border-width: 10px;
-    }
+  0% {
+    border-width: 100px;
+  }
+  100% {
+    border-width: 10px;
+  }
 }
 
 .hero__name .name {
-    display: inline-block;
-    opacity: 1;
-    animation: fade-in 0.1s ease-in, scale-down 1s linear;
-    color: $primary_color;
+  display: inline-block;
+  opacity: 1;
+  animation: fade-in 0.1s ease-in, scale-down 1s linear;
+  color: $primary_color;
 }
 
 @keyframes fade-in {
-    from {
-        opacity: 0.3;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes scale-down {
-    from {
-        transform: scale(4);
-    }
-    to {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(4);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 
 .d-none {
-    display: none;
+  display: none;
 }
 
 .d-block {
-    display: block;
+  display: block;
 }

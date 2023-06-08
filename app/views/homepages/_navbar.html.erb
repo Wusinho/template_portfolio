@@ -1,0 +1,19 @@
+<nav class="nav__container">
+  <div>
+    <%= @user[:name] %>
+  </div>
+  <div>
+    <%= link_to root_path, class: nav__link do %>
+      <span>home</span>
+    <% end %>
+    <%= link_to root_path, class: nav__link do %>
+      <span>works</span>
+    <% end %>
+    <%= link_to root_path, class: nav__link do %>
+      <span>about-me</span>
+    <% end %>
+    <%= link_to root_path, class: nav__link do %>
+      <span>contact-me</span>
+    <% end %>
+  </div>
+</nav>
