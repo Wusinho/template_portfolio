@@ -6,7 +6,6 @@ export default class extends Controller {
     event.preventDefault();
     const target = event.currentTarget.dataset.target;
     const section = document.querySelector(`[data-scroll-target="${target}"]`);
-    console.log(section)
     if (section) {
       window.scrollTo({
         top: section.offsetTop,
