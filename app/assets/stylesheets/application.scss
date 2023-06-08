@@ -36,6 +36,31 @@ body {
     width: 50vw;
 }
 
+.hero__image {
+    border: 10px solid $font;
+    border-radius: 50%;
+    animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
+
+}
+
+@keyframes blur-in {
+    0% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
+@keyframes pixelate {
+    0% {
+        border-width: 100px;
+    }
+    100% {
+        border-width: 10px;
+    }
+}
+
 .hero__name .name {
     display: inline-block;
     opacity: 1;

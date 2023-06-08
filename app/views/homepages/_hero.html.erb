@@ -3,10 +3,10 @@
   <div class="d-none" data-name-target="name" ><%= name_list(user[:name]) %></div>
   <div>
     <h2 class="hero__name">Hello, My name is
-      <span data-name-target="replace">Jhon Doe</span>
+      <span class="name" data-name-target="replace">Jhon Doe</span>
     </h2>
   </div>
   <div>
-    <%= image_tag user[:avatar_url] %>
+    <%= image_tag user[:avatar_url], class: 'hero__image' %>
   </div>
 </div>
