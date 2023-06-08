@@ -1,15 +1,15 @@
-  <div class="d-none" data-name-target="name" ><%= name_list(@user[:name]) %></div>
+  <div class="d-none" data-name-target="name" ><%= name_list(@user['name']) %></div>
   <div>
     <div>
       <h2 class="hero__name">Hello, My name is
         <span class="name" data-name-target="replace">Jhon Doe</span>
       </h2>
       <p>
-        <%= @user[:bio] %>
+        <%= @user['bio'] %>
       </p>
       <%= link_to 'Know me !!', @cv, target: '_blank', class: cta %>
     </div>
   </div>
   <div>
-    <%= image_tag @user[:avatar_url], class: 'hero__image' %>
+    <%= image_tag @user['avatar_url'], class: 'hero__image' %>
   </div>

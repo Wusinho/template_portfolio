@@ -8,7 +8,8 @@ class HomepagesController < ApplicationController
   private
 
   def github_information
-    @user = git_hub_info
+    user = User.first || User.create(information: git_hub_info)
+    @user = JSON.parse(user.information)
     @cv = ENV['GOOGLE_CV']
   end
 
