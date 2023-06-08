@@ -24,5 +24,6 @@ nav {
   }
   .active {
     color: $font;
+    pointer-events: none;
   }
 }

@@ -19,9 +19,8 @@ export default class extends Controller {
   }
 
   active_nav_link(links, current_element) {
-    links.forEach((link)=>{
-      link.classList.remove('active')
-    })
-    current_element.classList.add('active')
+    links.forEach(link => link.classList.remove('active'));
+    current_element.classList.add('active');
   }
+
 }
