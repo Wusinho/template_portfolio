@@ -1,26 +1,31 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="name"
 export default class extends Controller {
-  static targets = ['name']
+  static targets = ['name', 'replace'];
+
   connect() {
-    const name_container = this.nameTarget
-    const name_list = JSON.parse(name_container.innerHTML)
-    this.iterateArray(name_list, name_container)
+    const nameContainer = this.nameTarget;
+    const parentElement = this.replaceTarget.parentNode;
+    const nameList = JSON.parse(nameContainer.innerHTML);
+    this.iterateArray(nameList, parentElement);
   }
 
-  iterateArray(name_list, name_container) {
+  iterateArray(nameList, parentElement) {
     let index = 0;
 
     const intervalId = setInterval(() => {
-      if (index >= name_list.length) {
+      if (index >= nameList.length) {
         clearInterval(intervalId);
         return;
       }
 
-      const name = name_list[index];
-      if (index === 0) name_container.classList.remove('d-none');
-      name_container.innerHTML = name
+      const name = nameList[index];
+      const newSpanElement = document.createElement('span');
+      newSpanElement.setAttribute('data-name-target', 'replace');
+      newSpanElement.innerHTML = name;
+      newSpanElement.classList.add('span');
+
+      parentElement.replaceChild(newSpanElement, this.replaceTarget);
 
       index++;
     }, 100);
