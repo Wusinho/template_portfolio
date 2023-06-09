@@ -21,20 +21,35 @@ export default class extends Controller {
     }
   }
 
-  onScroll(e){
+  onScroll(e) {
     const scrollPosition = window.scrollY;
+    const firstLink = this.navlinksTargets[0];
+    const firstLinkTargetId = firstLink.dataset.target;
+    const firstLinkTargetElement = document.getElementById(firstLinkTargetId);
+    const firstLinkTargetOffsetTop = firstLinkTargetElement.offsetTop;
+
+    if (scrollPosition < firstLinkTargetOffsetTop) {
+      firstLink.classList.add('active');
+    } else {
+      firstLink.classList.remove('active');
+    }
+
     this.navlinksTargets.forEach((link) => {
-      const targetId = link.dataset.target;
-      const targetElement = document.getElementById(targetId);
-      const targetOffsetTop = targetElement.offsetTop;
-      const targetOffsetBottom = targetOffsetTop + targetElement.offsetHeight;
-      if (scrollPosition >= targetOffsetTop && scrollPosition < targetOffsetBottom) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
+      if (link !== firstLink) {
+        const targetId = link.dataset.target;
+        const targetElement = document.getElementById(targetId);
+        const targetOffsetTop = targetElement.offsetTop;
+        const targetOffsetBottom = targetOffsetTop + targetElement.offsetHeight;
+
+        if (scrollPosition >= targetOffsetTop && scrollPosition < targetOffsetBottom) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
       }
     });
   }
+
 
   active_nav_link(links, current_element) {
     links.forEach(link => link.classList.remove('active'));

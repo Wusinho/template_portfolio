@@ -25,6 +25,7 @@ body {
   background-color: $back_ground_color;
   color: $font;
   line-height: 1.8em;
+  margin: 0;
 }
 
 .portfolio__container {
@@ -32,12 +33,12 @@ body {
 }
 
 .portfolio__container > div:first-child {
-  width: 95vw;
+  width: 90vw;
 }
 
 .container {
-  height: 100vh;
-  margin: 150px 50px 0 150px;
+  height: 90vh;
+  margin: 150px 10px 0 100px;
   padding-top: 40px;
 }
 
