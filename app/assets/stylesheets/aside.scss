@@ -4,25 +4,23 @@ aside {
   width: 50px;
   position: sticky;
   top: 0;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   div {
     margin-top: 100px;
+    .nav__link {
+      color: $grey;
+      text-decoration: none;
+      display: inline-block;
+      padding-top: 100px;
+      position: relative;
+      font-size: 18px;
+      transform: rotate(90deg);
+      transform-origin: bottom left;
+      white-space: nowrap;
+    }
+    .active {
+      color: $font;
+      pointer-events: none;
+    }
   }
-  .nav__link {
-    color: $grey;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 100px;
-    position: relative;
-    font-size: 18px;
-    transform: rotate(90deg);
-    transform-origin: bottom left;
-    white-space: nowrap;
-    pointer-events: none; /* Add this line */
-  }
-}
-
-aside div .active {
-  color: $font;
-  pointer-events: none;
 }
