@@ -2,22 +2,27 @@
 
 aside {
   width: 50px;
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Adjust the height as needed */
+  div {
+    margin-top: 100px;
+  }
   .nav__link {
     color: $grey;
     text-decoration: none;
-    span {
-      display: inline-block;
-      position: relative;
-      font-size: 18px;
-    }
-    span::before {
-      content: '#';
-      color: $primary_color;
-      padding-left: 20px;
-    }
+    display: inline-block;
+    padding-top: 100px;
+    position: relative;
+    font-size: 18px;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    white-space: nowrap;
+    pointer-events: none; /* Add this line */
   }
-  .active {
-    color: $font;
-    pointer-events: none;
-  }
+}
+
+aside div .active {
+  color: $font;
+  pointer-events: none;
 }
