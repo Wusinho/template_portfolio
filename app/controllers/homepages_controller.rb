@@ -1,5 +1,4 @@
 class HomepagesController < ApplicationController
-  include Geteable
   before_action :github_information, only: [:index]
   def index
     @time = Time.now
@@ -8,7 +7,7 @@ class HomepagesController < ApplicationController
   private
 
   def github_information
-    user = User.first || User.create(information: git_hub_info)
+    user = User.create_update_profile
     @user = JSON.parse(user.information)
     @cv = ENV['GOOGLE_CV']
   end
