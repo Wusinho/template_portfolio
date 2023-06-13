@@ -28,6 +28,15 @@
     width: 300px;
     position: relative;
     overflow: hidden;
+    .box {
+      z-index: 99999;
+      width: 10px;
+      height: 10px;
+      background-color: $primary_color;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
   }
 }
 
@@ -43,21 +52,16 @@
   height: 100%;
   background-color: $primary_color;
   opacity: 0.1;
-  transition: width 0.3s ease;
-}
-
-.image__container:hover::before {
   animation: slide-in 0.5s ease forwards;
 }
 
+
 .hero__name .name {
-  z-index: 1000;
   display: inline-block;
   opacity: 1;
   animation: fade-in 0.1s ease-in, scale-down 1s linear;
   color: $primary_color;
 }
-
 
 @keyframes blur-in {
   0% {
