@@ -43,7 +43,10 @@ body {
 .container {
   height: 100vh;
   margin: 150px 10px 0 100px;
-  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.8rem;
 }
 
 .d-none {
