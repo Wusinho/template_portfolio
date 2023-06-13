@@ -9,7 +9,7 @@ module Geteable
       if response.status == 200
         response.body
       else
-        raise "Failed to fetch GitHub info: #{response.status}"
+        User.first
       end
     end
   end

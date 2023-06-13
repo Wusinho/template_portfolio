@@ -30,6 +30,7 @@ body {
 .portfolio__container {
   display: grid;
   grid-template-columns: 25px 1fr 25px;
+  gap: 150px;
   grid-template-areas:
   'left_aside section__container right_aside'
 }
@@ -46,6 +47,7 @@ body {
   justify-content: center;
   align-items: center;
   line-height: 1.8rem;
+  border-left: 0.5px solid $grey;
 }
 
 .d-none {
