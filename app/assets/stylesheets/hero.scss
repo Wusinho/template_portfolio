@@ -16,27 +16,36 @@
     }
   }
 
-  div {
-    height: 300px;
-  }
-
-  div:nth-child(3) {
+  div:nth-child(2) {
     display: flex;
     justify-content: flex-end;
-    width: 300px;
     img {
       object-fit: cover;
     }
   }
+  .image__container {
+    z-index: 1000;
+    background-color: $primary_color;
+
+  }
 }
+
 
 .hero__image {
+  z-index: -1;
+  height: 300px;
+  width: 300px;
   border: 10px solid $font;
-  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  //border-radius: 50%;
   animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
+  transition: filter 0.5s ease; /* Add a transition effect */
 }
 
+
 .hero__name .name {
+  z-index: 1000;
   display: inline-block;
   opacity: 1;
   animation: fade-in 0.1s ease-in, scale-down 1s linear;

@@ -14,9 +14,14 @@ aside {
       color: $grey;
       text-decoration: none;
       font-size: 18px;
+      transition: filter 0.3s ease-in-out;
+      &:hover{
+        filter: drop-shadow(0 0 5px $primary_color) blur(2px);
+        transition: filter 0.3s ease-in-out;
+      }
     }
     .active {
-      color: $font;
+      color: $primary_color;
       pointer-events: none;
     }
   }
