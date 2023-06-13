@@ -1,4 +1,4 @@
-<div>
+<div class="right_aside">
 <%= link_to root_path, class: nav__link + ' active', data: {
     action: 'click->scroll#scrollToSection',
     scroll_target: 'navlinks',
@@ -16,15 +16,15 @@
   <%= link_to root_path, class: nav__link, data: {
     action: 'click->scroll#scrollToSection',
     scroll_target: 'navlinks',
-    target: 'about-me'
+    target: 'aboutMe'
   } do %>
-    about-me
+    about|me
   <% end %>
   <%= link_to root_path, class: nav__link, data: {
     action: 'click->scroll#scrollToSection',
     scroll_target: 'navlinks',
-    target: 'contact-me'
+    target: 'contactMe'
   } do %>
-    contact-me
+    contact|me
   <% end %>
 </div>

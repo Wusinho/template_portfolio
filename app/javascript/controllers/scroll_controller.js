@@ -21,31 +21,52 @@ export default class extends Controller {
     }
   }
 
-  onScroll(e) {
+  // onScroll(e) {
+  //   const scrollPosition = window.scrollY;
+  //   const firstLink = this.navlinksTargets[0];
+  //   const firstLinkTargetId = firstLink.dataset.target;
+  //   const firstLinkTargetElement = document.getElementById(firstLinkTargetId);
+  //   const firstLinkTargetOffsetTop = firstLinkTargetElement.offsetTop;
+  //
+  //   // if (scrollPosition < firstLinkTargetOffsetTop) {
+  //   //   firstLink.classList.add('active');
+  //   // } else {
+  //   //   firstLink.classList.remove('active');
+  //   // }
+  //
+  //   this.navlinksTargets.forEach((link) => {
+  //     if (link !== firstLink) {
+  //       const targetId = link.dataset.target;
+  //       const targetElement = document.getElementById(targetId);
+  //       const targetOffsetTop = targetElement.offsetTop;
+  //       const targetOffsetBottom = targetOffsetTop + targetElement.offsetHeight;
+  //
+  //       if (scrollPosition >= targetOffsetTop && scrollPosition < targetOffsetBottom) {
+  //         link.classList.add('active');
+  //       } else {
+  //         link.classList.remove('active');
+  //       }
+  //     }
+  //   });
+  // }
+
+  onScroll(e){
     const scrollPosition = window.scrollY;
-    const firstLink = this.navlinksTargets[0];
-    const firstLinkTargetId = firstLink.dataset.target;
-    const firstLinkTargetElement = document.getElementById(firstLinkTargetId);
-    const firstLinkTargetOffsetTop = firstLinkTargetElement.offsetTop;
-
-    if (scrollPosition < firstLinkTargetOffsetTop) {
-      firstLink.classList.add('active');
-    } else {
-      firstLink.classList.remove('active');
-    }
-
     this.navlinksTargets.forEach((link) => {
-      if (link !== firstLink) {
-        const targetId = link.dataset.target;
-        const targetElement = document.getElementById(targetId);
-        const targetOffsetTop = targetElement.offsetTop;
-        const targetOffsetBottom = targetOffsetTop + targetElement.offsetHeight;
+      const targetId = link.dataset.target;
+      const targetElement = document.getElementById(targetId);
+      const targetOffsetTop = targetElement.offsetTop - 40;
+      const targetOffsetBottom = targetOffsetTop + targetElement.offsetHeight;
+      console.log('------------------')
+      console.log(scrollPosition)
+      console.log(targetOffsetTop)
+      console.log(targetOffsetBottom)
 
-        if (scrollPosition >= targetOffsetTop && scrollPosition < targetOffsetBottom) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
+      console.log('------------------')
+      if (scrollPosition >= targetOffsetTop && scrollPosition < targetOffsetBottom) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   }
