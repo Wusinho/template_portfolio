@@ -11,7 +11,5 @@
     </div>
   </div>
   <div class="image__container">
-    <div class="hero__image" style="background-image: url('<%= image_path(@user['avatar_url']) %>')"></div>
+    <%= image_tag @user['avatar_url'], class: 'hero__image' %>
   </div>
-<!--  <div class="hero__image"></div>-->
-  <%#= image_tag @user['avatar_url'], class: 'hero__image' %>

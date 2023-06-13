@@ -24,25 +24,31 @@
     }
   }
   .image__container {
-    z-index: 1000;
-    background-color: $primary_color;
-
+    height: 300px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
   }
 }
 
-
 .hero__image {
-  z-index: -1;
-  height: 300px;
-  width: 300px;
-  border: 10px solid $font;
-  background-size: cover;
-  background-position: center;
-  //border-radius: 50%;
-  animation: fade-in 1s ease-in, blur-in 4.5s ease-in;
-  transition: filter 0.5s ease; /* Add a transition effect */
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
+.image__container:hover::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  background-color: $primary_color;
+  opacity: 0.1;
+  transition: width 0.3s ease;
+}
+
+.image__container:hover::before {
+  animation: slide-in 0.5s ease forwards;
+}
 
 .hero__name .name {
   z-index: 1000;
@@ -86,5 +92,14 @@
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
