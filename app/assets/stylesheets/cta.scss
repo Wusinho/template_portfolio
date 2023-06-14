@@ -5,10 +5,12 @@
   color: $font;
   padding: 8px 20px;
   border: 1px solid $primary_color;
-  transition: border-color 1s ease-in-out;
+  transition: border-color 0.5s ease-in-out, color 0.5s ease-in;
 }
 
 .cta:hover {
+  color: $redish;
+  transition: color 1s ease-in;
   animation: border-disappear 1s linear forwards;
 }
 
