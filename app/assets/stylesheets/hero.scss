@@ -47,14 +47,21 @@
 }
 
 .image__container:hover::before {
-  content: "";
+  content: "ABOUT ME";
+  color: $redish;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   height: 100%;
   background-color: $primary_color;
-  opacity: 0.1;
-  animation: slide-in 0.5s ease forwards;
+  animation: slide-in 0.5s ease forwards, fade-out 1s ease forwards;
 }
 
+.image__container:hover .box {
+  background-color: $redish;
+  animation: slide-in 0.5s ease forwards, fade-out 1s ease forwards;
+}
 
 .hero__name .name {
   display: inline-block;
@@ -105,5 +112,14 @@
   }
   100% {
     width: 100%;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -10,7 +10,11 @@
       <%= link_to 'Know me !!', @cv, target: '_blank', class: cta %>
     </div>
   </div>
-  <div class="image__container">
+  <%= link_to root_path, class: 'image__container', data: {
+    action: 'click->scroll#scrollToSection',
+    scroll_target: 'navlinks',
+    target: 'about-me'
+  } do %>
     <div class="box"></div>
     <%= image_tag @user['avatar_url'], class: 'hero__image' %>
-  </div>
+  <% end %>
