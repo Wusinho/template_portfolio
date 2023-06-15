@@ -1,0 +1,6 @@
+<%= link_to repo_path(repo), class: 'repo', data: {
+  action: 'click->projects#click'
+} do %>
+  <h4><%= repo.name %></h4>
+  <p><%= repo.summary %></p>
+<% end %>

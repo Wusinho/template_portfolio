@@ -1,10 +1,12 @@
-<div class="nav__container" data-controller="projects">
 
   <h2>Projects</h2>
-  <% @user.repos.each do |repo| %>
-    <div>
-      <h4><%= repo.name %></h4>
-      <p><%= repo.summary %></p>
+  <div class="repos__container" data-controller="projects">
+    <div class="repos">
+      <% @user.repos.each do |repo| %>
+        <%= render 'repos/repo', repo: repo %>
+      <% end %>
     </div>
-  <% end %>
-</div>
+    <div class="selected__repo">
+
+    </div>
+  </div>

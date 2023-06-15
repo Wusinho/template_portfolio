@@ -1,0 +1,26 @@
+@import "colors";
+
+.project__container {
+  height: 100vh;
+  padding: 20px 0;
+  border-left: 1px solid $grey;
+  h2 {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .repos__container {
+    display: flex;
+    .repo {
+      color: $font;
+      margin: 10px;
+      width: 200px;
+      border: 1px solid $primary_color;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .selected__repo{
+      width: 100%;
+    }
+  }
+
+}
