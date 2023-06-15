@@ -28,7 +28,6 @@ export default class extends Controller {
     })
         .then((response) => response.json())
         .then((json) => {
-          console.log(json.repo);
           selected__repo.innerHTML = json.repo
           loader.classList.add('d-none')
         });
