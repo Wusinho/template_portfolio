@@ -5,7 +5,7 @@ class User < ApplicationRecord
   after_create_commit :update_user_github
 
   def update_user_github
-    self.update(information: user.git_hub_info)
+    self.update(information: self.git_hub_info)
     self.scrape
   end
 

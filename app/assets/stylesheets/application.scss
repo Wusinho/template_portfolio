@@ -57,3 +57,10 @@ body {
 .d-block {
   display: block;
 }
+
+.error_message {
+  display: inline-block;
+  height: 100%;
+  background-color: $redish;
+  border-radius: 20px;
+}

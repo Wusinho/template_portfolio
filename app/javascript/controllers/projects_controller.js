@@ -28,10 +28,15 @@ export default class extends Controller {
     })
         .then((response) => response.json())
         .then((json) => {
-          selected__repo.innerHTML = json.repo
-          loader.classList.add('d-none')
-        });
+          loader.classList.add('d-none');
+          if ( json.error ) {
+            selected__repo.innerHTML = json.error;
+          } else {
+            selected__repo.innerHTML = json.repo;
+          }
+        })
   }
+
 
 
 }
