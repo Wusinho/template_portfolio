@@ -1,9 +1,10 @@
 class ReposController < ApplicationController
   before_action :set_repo, only: [:repo]
   def repo
-    pic_link = @repo.repo_info
+    repo = @repo.repo_info
+    p repo
     render json: {
-      picture: pic_link
+      picture: repo
     }
   end
 

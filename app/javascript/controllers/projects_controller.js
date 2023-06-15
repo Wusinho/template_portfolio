@@ -29,11 +29,22 @@ export default class extends Controller {
         .then((response) => response.text())
         .then((pic_info) => {
           let parsed = JSON.parse(pic_info)
-          let url = `https://github.com/${parsed.picture}`
+          console.log(pic_info)
+          // let url = `https://github.com/${parsed.picture}`
           const imgElement = document.createElement('img');
-          imgElement.src = url
-          loader.classList.add('d-none')
-          selected__repo.appendChild(imgElement);
+          const iframeElement = document.createElement('iframe');
+
+            // <iframe width="790" height="444" src="https://www.youtube.com/embed/pok8H_KF1FA?list=RDA9hcJgtnm6Q"
+            //         title="Doja Cat - Say So (Official Video)" frameBorder="0"
+            //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            //         allowFullScreen></iframe>
+          //   let url = 'https://www.youtube.com/embed/pok8H_KF1FA?list=RDA9hcJgtnm6Q'
+          //   iframeElement.setAttribute('src', url);
+          //   iframeElement.setAttribute('width', '100%');
+          //   iframeElement.setAttribute('height', '100%');
+          // // imgElement.src = url
+          // loader.classList.add('d-none')
+          // selected__repo.appendChild(iframeElement);
         });
   }
 }
