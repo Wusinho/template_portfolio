@@ -2,17 +2,20 @@ class User < ApplicationRecord
   include Geteable
   include Scrapable
   has_many :repos
+  after_create_commit :update_user_github
 
-  def self.create_update_profile
-    user = find_or_create_by(id: 1)
-    if user.information.nil? || user.update_time
-      user.update(information: user.git_hub_info)
-      user.scrape
-    end
-    user
+  def update_user_github
+    self.update(information: user.git_hub_info)
+    self.scrape
   end
 
-  def update_time
+  def update_user
+    update_user_github if time_to_update?
+
+    self.information
+  end
+
+  def time_to_update?
     Time.now - self.updated_at >= 23.hours
   end
 end

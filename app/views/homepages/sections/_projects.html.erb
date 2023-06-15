@@ -1,4 +1,10 @@
-<div class="nav__container">
+<div class="nav__container" data-controller="projects">
 
-<h2>Projects</h2>
+  <h2>Projects</h2>
+  <% @user.repos.each do |repo| %>
+    <div>
+      <h4><%= repo.name %></h4>
+      <p><%= repo.summary %></p>
+    </div>
+  <% end %>
 </div>
