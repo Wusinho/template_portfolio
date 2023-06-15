@@ -6,7 +6,9 @@
         <%= render 'repos/repo', repo: repo %>
       <% end %>
     </div>
-    <div class="selected__repo" data-projects-target="selected_repo">
-
+    <div class="selected__repo" >
+      <%= render 'shared/loader' %>
+      <div data-projects-target="selected_repo">
+      </div>
     </div>
   </div>

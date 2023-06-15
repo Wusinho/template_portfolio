@@ -2,21 +2,18 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="projects"
 export default class extends Controller {
-  static targets = ['selected_repo', 'project_links']
+  static targets = ['selected_repo', 'project_links', 'loader']
   connect() {
   }
 
   click(e) {
     e.preventDefault();
     const selected__repo = this.selected_repoTarget;
-    const link = e.target.closest('a');
-    console.log();
-    const h1Element = document.createElement('h1');
-    const csrtToken = document.querySelector('meta[name="csrf-token"]').content;
-    h1Element.textContent = 'Loading...';
     selected__repo.innerHTML = '';
-    selected__repo.appendChild(h1Element);
-    const links = this.project_linksTargets;
+    const link = e.target.closest('a');
+    const loader = this.loaderTarget;
+    loader.classList.remove('d-none')
+    const csrtToken = document.querySelector('meta[name="csrf-token"]').content;
 
     fetch('/repos/repo', {
       method: 'POST',
@@ -35,7 +32,7 @@ export default class extends Controller {
           let url = `https://github.com/${parsed.picture}`
           const imgElement = document.createElement('img');
           imgElement.src = url
-          selected__repo.innerHTML = '';
+          loader.classList.add('d-none')
           selected__repo.appendChild(imgElement);
         });
   }
