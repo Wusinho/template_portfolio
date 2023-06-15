@@ -12,8 +12,8 @@ export default class extends Controller {
     selected__repo.innerHTML = '';
     const link = e.target.closest('a');
     const loader = this.loaderTarget;
-    loader.classList.remove('d-none')
-    const csrtToken = document.querySelector('meta[name="csrf-token"]').content;
+    loader.classList.remove('d-none');
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
     fetch('/repos/repo', {
       method: 'POST',
@@ -22,29 +22,17 @@ export default class extends Controller {
       credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json',
-        'X-CSRF-Token': csrtToken,
+        'X-CSRF-Token': csrfToken,
       },
       body: JSON.stringify({ id: link.dataset.id }),
     })
-        .then((response) => response.text())
-        .then((pic_info) => {
-          let parsed = JSON.parse(pic_info)
-          console.log(pic_info)
-          // let url = `https://github.com/${parsed.picture}`
-          const imgElement = document.createElement('img');
-          const iframeElement = document.createElement('iframe');
-
-            // <iframe width="790" height="444" src="https://www.youtube.com/embed/pok8H_KF1FA?list=RDA9hcJgtnm6Q"
-            //         title="Doja Cat - Say So (Official Video)" frameBorder="0"
-            //         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            //         allowFullScreen></iframe>
-          //   let url = 'https://www.youtube.com/embed/pok8H_KF1FA?list=RDA9hcJgtnm6Q'
-          //   iframeElement.setAttribute('src', url);
-          //   iframeElement.setAttribute('width', '100%');
-          //   iframeElement.setAttribute('height', '100%');
-          // // imgElement.src = url
-          // loader.classList.add('d-none')
-          // selected__repo.appendChild(iframeElement);
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json.repo);
+          selected__repo.innerHTML = json.repo
+          loader.classList.add('d-none')
         });
   }
+
+
 }
