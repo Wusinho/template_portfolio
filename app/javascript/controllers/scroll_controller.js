@@ -4,9 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['navlinks']
   connect(){
+    const scrollPosition = window.scrollY;
+    this.activate_nav_link(this.navlinksTargets, scrollPosition)
   }
   disconnect() {
-    // window.removeEventListener('scroll', this.handleScroll);
   }
   scrollToSection(event) {
     event.preventDefault();
@@ -22,7 +23,11 @@ export default class extends Controller {
 
   onScroll(e){
     const scrollPosition = window.scrollY;
-    this.navlinksTargets.forEach((link) => {
+    this.activate_nav_link(this.navlinksTargets, scrollPosition)
+  }
+
+  activate_nav_link(links, scrollPosition) {
+    links.forEach((link) => {
       const targetId = link.dataset.target;
       const targetElement = document.getElementById(targetId);
       const targetOffsetTop = targetElement.offsetTop - 40;
