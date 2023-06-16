@@ -6,7 +6,8 @@ class ReposController < ApplicationController
   def repo
     readme = @repo.repo_info
       render json: {
-        readme: readme
+        readme: readme,
+        repo_link: ApplicationController.render(partial: 'shared/repo_link', locals: { repo_link: @repo.repo_link })
       }
   end
 

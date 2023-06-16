@@ -3,6 +3,10 @@ require 'uri'
 class Repo < ApplicationRecord
   belongs_to :user
 
+  def repo_link
+    "https://github.com/#{ENV['GITHUB_USER']}/#{self.name}"
+  end
+
   def repo_info
     readme_response = readme
 

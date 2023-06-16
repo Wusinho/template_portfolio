@@ -11,6 +11,8 @@ export default class extends Controller {
     const selected__repo = this.selected_repoTarget;
     selected__repo.innerHTML = '';
     const link = e.target.closest('a');
+    this.enable_links(this.project_linksTargets)
+    link.classList.add('invisible')
     const loader = this.loaderTarget;
     loader.classList.remove('d-none');
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
@@ -30,16 +32,24 @@ export default class extends Controller {
         .then((json) => {
           loader.classList.add('d-none');
           const divElement = document.createElement('div')
+          const linkElement = document.createElement('div')
           divElement.classList.add('readme')
           if ( json.error ) {
             divElement.innerHTML = json.error;
           } else {
             divElement.innerHTML = json.readme;
+            linkElement.innerHTML = json.repo_link
           }
-          selected__repo.append(divElement)
+          selected__repo.prepend(divElement)
+          selected__repo.append(linkElement)
         })
   }
 
+  enable_links(links) {
+      links.forEach((link)=>{
+          link.classList.remove('invisible')
+      })
+  }
 
 
 }

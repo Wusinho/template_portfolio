@@ -36,6 +36,10 @@
         animation-duration: 1s;
         animation-timing-function: ease;
       }
+      .repo_link {
+        text-decoration: none;
+        color: $redish;
+      }
     }
   }
 

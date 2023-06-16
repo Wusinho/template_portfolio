@@ -64,3 +64,9 @@ body {
   background-color: $redish;
   border-radius: 20px;
 }
+
+.invisible {
+  opacity: 0;
+  transition: opacity 1s ease, height 1s ease;
+  pointer-events: none;
+}
