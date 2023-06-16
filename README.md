@@ -1,24 +1,53 @@
-# README
+# GITHUB PROFILE TEMPLATE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Objectives
 
-Things you may want to cover:
+- Cut down the time to update Portfolio
+- During the day there can be automatic updates depending at what time the page is visited
+- Standarize a Readme template.
+- As easily as pinning up your prefered repos
 
-* Ruby version
+## Description of the Project
 
-* System dependencies
+For the development of the project, the following tools were used:
 
-* Configuration
+- Rails v 7.0.5
+- Ruby 3.2.0
+- Postgresql
+- Github query
+- Helloacm API
 
-* Database creation
+The Purpose of this project is cut down the time of updating your own portfolio with new repos and details, etc. It is easily done if you write a nice Readme and the template just reads it.
 
-* Database initialization
+## How to start the project from your Local environment
+- On production it is needed to create an .env file
+````
+GITHUB_USER=your_git_hub_nickname
+GOOGLE_CV=link_of_your_cv_I_USE_GOOGLE_DOCS
+````
 
-* How to run the test suite
+- Open your terminal and cd where you want to store the project
+- Run the following command in the terminal
+```bash
+git clone https://github.com/Wusinho/template_portfolio.git
+```
+- Cd into the created directory
+- Run $ `bundle install`
+- On terminal type $ `rails db:create && rails db:migrate`
+- On terminal type $ `rails server`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Author
 
-* Deployment instructions
+👤 **Heber Lazo**
 
-* ...
+- Github: [@Wusinho](https://github.com/Wusinho)
+- LinkedIn: [Heber Lazo](https://www.linkedin.com/in/heber-lazo-benza-523266133/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## Show your support
+
+Give a star if you :star: like this project!
+
