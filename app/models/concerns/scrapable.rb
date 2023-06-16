@@ -15,9 +15,7 @@ module Scrapable
       pinned_repos = result.dig('data', 'user', 'pinnedItems', 'nodes')
 
       pinned_repos.each do |repo|
-        puts "Name: #{repo['name']}"
-        puts "Description: #{repo['description']}"
-        puts "---------------------------"
+        self.repos.create(name: repo['name'], summary: repo['description'])
       end
     end
 

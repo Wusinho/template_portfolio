@@ -10,7 +10,7 @@ class User < ApplicationRecord
   end
 
   def update_user
-    update_user_github #if time_to_update?
+    update_user_github if time_to_update?
 
     self.information
   end
