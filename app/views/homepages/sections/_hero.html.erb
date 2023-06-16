@@ -1,11 +1,11 @@
-  <div class="d-none" data-name-target="name" ><%= name_list(@user['name']) %></div>
+  <div class="d-none" data-name-target="name" ><%= name_list(@github['name']) %></div>
   <section>
     <div>
       <h2 class="hero__name">Hello, My name is
         <span class="name" data-name-target="replace">Jhon Doe</span>
       </h2>
       <p>
-        <%= @user['bio'] %>
+        <%= @github['bio'] %>
       </p>
       <%= link_to 'Know me !!', @cv, target: '_blank', class: cta %>
     </div>
@@ -16,5 +16,5 @@
     target: 'about-me'
   } do %>
     <div class="box"></div>
-    <%= image_tag @user['avatar_url'], class: 'hero__image' %>
+    <%= image_tag @github['avatar_url'], class: 'hero__image' %>
   <% end %>

@@ -1,0 +1,61 @@
+@import "colors";
+
+.project__container {
+  height: 100vh;
+  padding: 20px 0;
+  border-left: 1px solid $grey;
+  h2 {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .repos__container {
+    display: flex;
+    .repos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100vh;
+      .repo {
+        text-decoration: none;
+        div {
+          color: $font;
+          margin: 10px;
+          width: 200px;
+          padding: 10px;
+          border: 1px solid $primary_color;
+        }
+      }
+    }
+    .selected__repo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .readme {
+        animation-name: readmeAnimation;
+        animation-duration: 1s;
+        animation-timing-function: ease;
+      }
+      .repo_link {
+        text-decoration: none;
+        color: $redish;
+      }
+    }
+  }
+
+  .inactive_link {
+    pointer-events: none;
+  }
+
+}
+
+@keyframes readmeAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

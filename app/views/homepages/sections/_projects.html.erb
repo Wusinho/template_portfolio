@@ -1,4 +1,13 @@
-<div class="nav__container">
 
-<h2>Projects</h2>
-</div>
+  <div class="repos__container" data-controller="projects">
+    <div class="repos">
+      <% @user.repos.each do |repo| %>
+        <%= render 'repos/repo', repo: repo %>
+      <% end %>
+    </div>
+    <div class="selected__repo" >
+      <%= render 'shared/loader' %>
+      <div data-projects-target="selected_repo">
+      </div>
+    </div>
+  </div>
