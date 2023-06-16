@@ -2,10 +2,11 @@
 
 ## Objectives
 
-- Cut down the time to update Portfolio
-- During the day there can be automatic updates depending at what time the page is visited
-- Standarize a Readme template.
-- As easily as pinning up your prefered repos
+- Streamline the process of updating your portfolio
+- Implement automatic updates based on the time of visit
+- Establish a standardized README template
+- Easily pin your preferred repositories and the scrapper will do the work for you
+
 
 ## Description of the Project
 
@@ -14,10 +15,11 @@ For the development of the project, the following tools were used:
 - Rails v 7.0.5
 - Ruby 3.2.0
 - Postgresql
-- Github query
+- Github API
 - Helloacm API
 
-The Purpose of this project is cut down the time of updating your own portfolio with new repos and details, etc. It is easily done if you write a nice Readme and the template just reads it.
+The purpose of this project is to reduce the time required to update your portfolio with new repositories and details. 
+This can be easily achieved by writing a well-structured README and having the app to read it, and also pin your most outstanding repos.
 
 ## How to start the project from your Local environment
 - On production it is needed to create an .env file
