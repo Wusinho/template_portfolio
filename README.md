@@ -27,6 +27,7 @@ This can be easily achieved by writing a well-structured README and having the a
 GITHUB_USER=your_git_hub_nickname
 GOOGLE_CV=link_of_your_cv_I_USE_GOOGLE_DOCS
 ````
+- Your pinned projects need to have this kind README template, scrapper will stop at 'Description of the Project'
 
 - Open your terminal and cd where you want to store the project
 - Run the following command in the terminal
