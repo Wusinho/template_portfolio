@@ -10,16 +10,21 @@
   }
   .repos__container {
     display: flex;
-    .repo {
-      text-decoration: none;
-      div {
-        color: $font;
-        margin: 10px;
-        width: 200px;
-        padding: 10px;
-        border: 1px solid $primary_color;
+    .repos {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100vh;
+      .repo {
+        text-decoration: none;
+        div {
+          color: $font;
+          margin: 10px;
+          width: 200px;
+          padding: 10px;
+          border: 1px solid $primary_color;
+        }
       }
-
     }
     .selected__repo {
       display: flex;
