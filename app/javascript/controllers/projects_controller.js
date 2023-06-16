@@ -29,11 +29,14 @@ export default class extends Controller {
         .then((response) => response.json())
         .then((json) => {
           loader.classList.add('d-none');
+          const divElement = document.createElement('div')
+          divElement.classList.add('readme')
           if ( json.error ) {
-            selected__repo.innerHTML = json.error;
+            divElement.innerHTML = json.error;
           } else {
-            selected__repo.innerHTML = json.repo;
+            divElement.innerHTML = json.readme;
           }
+          selected__repo.append(divElement)
         })
   }
 

@@ -4,9 +4,9 @@ class ReposController < ApplicationController
 
 
   def repo
-    repo = @repo.repo_info
+    readme = @repo.repo_info
       render json: {
-        repo: repo
+        readme: readme
       }
   end
 
