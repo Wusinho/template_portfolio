@@ -26,7 +26,7 @@ export default class extends Controller {
         'Content-Type': 'application/json',
         'X-CSRF-Token': csrfToken,
       },
-      body: JSON.stringify({ id: link.dataset.id }),
+      body: JSON.stringify({ name: link.dataset.name, link: link.dataset.link }),
     })
         .then((response) => response.json())
         .then((json) => {
