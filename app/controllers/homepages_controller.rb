@@ -7,8 +7,8 @@ class HomepagesController < ApplicationController
   private
 
   def github_information
-    @user = User.find_or_create_by(id: 1)
-    @github = JSON.parse(@user.update_user)
+    @user = ProfileServices.fetch_user_info
+
 
     @cv = ENV['GOOGLE_CV']
   end

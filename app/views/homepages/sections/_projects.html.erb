@@ -1,7 +1,7 @@
 
   <div class="repos__container" data-controller="projects">
     <div class="repos">
-      <% @user.repos.each do |repo| %>
+      <% repos.each do |repo| %>
         <%= render 'repos/repo', repo: repo %>
       <% end %>
     </div>
