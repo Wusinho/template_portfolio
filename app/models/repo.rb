@@ -2,6 +2,9 @@ require 'uri'
 
 class Repo < ApplicationRecord
   belongs_to :user
+  after_destroy_commit do
+    broadcast_remove { "repo_#{self.id}" }
+  end
 
   def repo_link
     "https://github.com/#{ENV['GITHUB_USER']}/#{self.name}"

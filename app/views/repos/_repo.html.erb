@@ -1,3 +1,4 @@
+<div class="<%= dom_id repo %>">
 <%= link_to repo_path(repo), class: 'repo', data: {
   action: 'click->projects#click',
   projects_target: 'project_links',
@@ -8,3 +9,4 @@
     <p><%= repo.summary %></p>
   </div>
 <% end %>
+</div>
