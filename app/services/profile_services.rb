@@ -1,6 +1,6 @@
 
 class ProfileServices
-  def self.fetch_user_info
+  def self.call
     response = make_graphql_post_request(pinned_query)
     user = User.find_or_create_by(id: 1)
 

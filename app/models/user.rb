@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   include Geteable
-  # include Scrapable
+  include Scrapable
   # has_many :repos
   # after_create_commit :update_user_github
   #
