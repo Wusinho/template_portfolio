@@ -24,7 +24,7 @@ class ReposController < ApplicationController
   private
 
   def repo_params
-    params.permit(:name, :link)
+    params.require(:repo).permit(:name, :link)
   end
 
 end

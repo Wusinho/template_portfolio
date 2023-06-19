@@ -2,12 +2,14 @@
 class ProfileServices
   def self.fetch_user_info
     response = make_graphql_post_request(pinned_query)
+    user = User.find_or_create_by(id: 1)
+
     if response.status == 200
       result = JSON.parse(response.body)
+      user.back_up_save(result['data'])
       result['data']
-      # Process the result and extract the required information
     else
-      # Handle the error case
+      user.information
     end
   end
 
