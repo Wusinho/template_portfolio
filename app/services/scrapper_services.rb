@@ -34,12 +34,12 @@ class ScrapperServices
       shields_urls.concat(urls)
     end
 
-    shields_urls.map { |url| extract_tech_from_url(url) }
+    shields_urls.map { |url| extract_tech_from_url(url)&.downcase }
   end
 
   def self.extract_tech_from_url(url)
-  match = url.match(/badge\/(.*?)-informational/)
-  match[1] if match
+    match = url.match(/badge\/(.*?)-informational/)
+    match[1] if match
   end
 
 end

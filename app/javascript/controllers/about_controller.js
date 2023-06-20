@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="about"
 export default class extends Controller {
-  static targets = ['loader', 'about_me']
+  static targets = ['loader', 'about_me', 'icons']
   connect() {
     const loader = this.loaderTarget
     loader.classList.remove('d-none');
@@ -27,7 +27,12 @@ export default class extends Controller {
               divElement.innerHTML = p
               about_me.append(divElement)
           })
-          console.log(about_me)
+            const icons = this.iconsTarget
+            about.shields.forEach((icon)=>{
+              const divElement = document.createElement('div')
+                divElement.innerHTML = `<i class="devicon-${icon}-plain"></i>`
+                icons.append(divElement)
+            })
         })
   }
 }
