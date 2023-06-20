@@ -17,8 +17,9 @@
       height: 100vh;
       .repo {
         text-decoration: none;
-        div {
+        h4 {
           color: $font;
+          text-align: center;
           margin: 10px;
           width: 200px;
           padding: 10px;
