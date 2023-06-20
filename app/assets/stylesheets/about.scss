@@ -20,10 +20,9 @@
 }
 
 .icons__container i {
-  font-size: 40px; /* Adjust the font size as needed */
+  font-size: 40px;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .icons__container {
     flex-wrap: wrap;
@@ -36,6 +35,6 @@
   }
 
   .icons__container i {
-    font-size: 18px; /* Adjust the font size for smaller screens */
+    font-size: 18px;
   }
 }
