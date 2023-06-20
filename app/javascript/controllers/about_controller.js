@@ -30,7 +30,7 @@ export default class extends Controller {
             const icons = this.iconsTarget
             about.shields.forEach((icon)=>{
               const divElement = document.createElement('div')
-                divElement.innerHTML = `<i class="devicon-${icon}-plain"></i>`
+                divElement.innerHTML = `<i class="${icon}"></i>`
                 icons.append(divElement)
             })
         })
