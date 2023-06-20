@@ -8,10 +8,10 @@ export default class extends Controller {
   static classes = ["opened"]
 
   connect(){
-    const scrollPosition = window.scrollY;
-    this.all_positions = this.save_scroll_links(this.navlinksTargets, scrollPosition)
+    this.all_positions = this.save_scroll_links(this.navlinksTargets, window.scrollY)
     this.current_active_link = this.active_link(this.all_positions)
     this.current_active_link.classList.add('active')
+    this.activate_about_view()
   }
   disconnect() {
   }
@@ -46,16 +46,11 @@ export default class extends Controller {
   onScroll(e){
     this.scroll_window = this.active_link(this.all_positions)
     if (this.current_active_link === this.scroll_window) return
-    this.current_active_link.classList.remove('active')
-    this.scroll_window.classList.add('active')
-    this.current_active_link = this.scroll_window
-    if (this.current_active_link.dataset.target === 'about-me') {
-      this.current_active_link.setAttribute('data-controller', 'about')
-    }
+      this.update_current_active_link(this.scroll_window)
+    this.activate_about_view()
   }
 
   save_scroll_links(links, scrollPosition) {
-    console.log('save_scroll_links')
     const obj = {}
     links.forEach((link) => {
       const targetId = link.dataset.target;
@@ -64,6 +59,17 @@ export default class extends Controller {
       obj[targetElement.id] = { beginning: targetElement.offsetTop, end: targetOffsetBottom }
     });
     return obj
+  }
+
+  update_current_active_link(new_active_link){
+    this.current_active_link.classList.remove('active')
+    new_active_link.classList.add('active')
+    this.current_active_link = this.scroll_window
+  }
+
+  activate_about_view(){
+    if (this.current_active_link.dataset.target !== 'about-me') { return }
+    this.current_active_link.setAttribute('data-controller', 'about')
   }
 
 }
