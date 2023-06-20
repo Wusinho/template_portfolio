@@ -3,6 +3,5 @@ class ScrapperController < ApplicationController
     @about_me = ScrapperServices.call
 
     render json: @about_me
-
   end
 end

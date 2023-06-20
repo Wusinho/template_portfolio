@@ -17,7 +17,7 @@ export default class extends Controller {
     loader.classList.remove('d-none');
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
-    fetch('/repos/repo', {
+    fetch('/repos', {
       method: 'POST',
       mode: 'cors',
       cache: 'no-cache',

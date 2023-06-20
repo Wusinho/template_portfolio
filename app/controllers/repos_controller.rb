@@ -1,12 +1,12 @@
 class ReposController < ApplicationController
   rescue_from StandardError, with: :handle_error
 
-  def repo
+  def create
     readme = Repo.repo_info(repo_params[:name])
-      render json: {
-        readme: readme,
-        repo_link: ApplicationController.render(partial: 'shared/repo_link', locals: { repo_link: repo_params[:link] })
-      }
+    render json: {
+      readme: readme,
+      repo_link: ApplicationController.render(partial: 'shared/repo_link', locals: { repo_link: repo_params[:link] })
+    }
   end
 
   private
@@ -24,7 +24,7 @@ class ReposController < ApplicationController
   private
 
   def repo_params
-    params.require(:repo).permit(:name, :link)
+    params.permit(:name, :link)
   end
 
 end
