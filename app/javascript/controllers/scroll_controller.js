@@ -17,25 +17,25 @@ export default class extends Controller {
   }
 
   active_link(positions) {
-    const scrollPosition = window.scrollY;
-    let id = '';
-
-    if (scrollPosition >= positions['home'].beginning && scrollPosition < positions['home'].end) {
-      id = 'home';
-    } else if (scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end) {
-      id = 'projects';
-    } else if (scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end) {
-      id = 'about-me';
-    } else {
-      id = 'contact-me';
-    }
-
+    let id = this.conditions(positions)
     return Array.from(this.navlinksTargets).find((link) => {
       return link.dataset.target === id;
     });
-
   }
 
+  conditions(positions) {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition >= positions['home'].beginning && scrollPosition < positions['home'].end) {
+      return 'home';
+    } else if (scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end) {
+      return 'projects';
+    } else if (scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end) {
+      return 'about-me';
+    } else {
+      return 'contact-me';
+    }
+  }
 
   scrollToSection(event) {
     event.preventDefault();
