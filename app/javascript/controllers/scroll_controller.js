@@ -49,6 +49,9 @@ export default class extends Controller {
     this.current_active_link.classList.remove('active')
     this.scroll_window.classList.add('active')
     this.current_active_link = this.scroll_window
+    if (this.current_active_link.dataset.target === 'about-me') {
+      this.current_active_link.setAttribute('data-controller', 'about')
+    }
   }
 
   save_scroll_links(links, scrollPosition) {
@@ -61,22 +64,6 @@ export default class extends Controller {
       obj[targetElement.id] = { beginning: targetElement.offsetTop, end: targetOffsetBottom }
     });
     return obj
-  }
-
-  activate_nav_link() {
-    const scrollPosition = window.scrollY;
-
-    links.forEach((link) => {
-      const targetId = link.dataset.target;
-      const targetElement = document.getElementById(targetId);
-      const targetOffsetTop = targetElement.offsetTop;
-      const targetOffsetBottom = targetOffsetTop + targetElement.offsetHeight;
-      if (scrollPosition >= targetOffsetTop && scrollPosition < targetOffsetBottom) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
   }
 
 }
