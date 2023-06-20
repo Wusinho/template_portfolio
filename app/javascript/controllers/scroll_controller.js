@@ -18,18 +18,24 @@ export default class extends Controller {
 
   active_link(positions) {
     const scrollPosition = window.scrollY;
-    let id = ''
-    if ( scrollPosition >= positions['home'].beginning && scrollPosition < positions['home'].end ){
-      id = 'home'
-    } else if ( scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end ) {
-      id = 'projects'
-    } else if ( scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end ) {
-      id = 'about-me'
+    let id = '';
+
+    if (scrollPosition >= positions['home'].beginning && scrollPosition < positions['home'].end) {
+      id = 'home';
+    } else if (scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end) {
+      id = 'projects';
+    } else if (scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end) {
+      id = 'about-me';
     } else {
-      id = 'contact-me'
+      id = 'contact-me';
     }
-    return document.querySelector(`[data-target="${id}"]`)
+
+    return Array.from(this.navlinksTargets).find((link) => {
+      return link.dataset.target === id;
+    });
+
   }
+
 
   scrollToSection(event) {
     event.preventDefault();
