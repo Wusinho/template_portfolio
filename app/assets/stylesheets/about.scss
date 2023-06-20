@@ -9,5 +9,33 @@
 }
 
 .icons__container {
+  width: 100%;
   display: flex;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.icons__container div {
+  padding: 10px 20px;
+}
+
+.icons__container i {
+  font-size: 40px; /* Adjust the font size as needed */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .icons__container {
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .icons__container div {
+    margin: 5px;
+  }
+
+  .icons__container i {
+    font-size: 18px; /* Adjust the font size for smaller screens */
+  }
 }
