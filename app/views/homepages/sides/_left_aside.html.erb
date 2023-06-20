@@ -1,3 +1,7 @@
-<aside class="left_aside">
-  <div>Hello there</div>
-</aside>
+<div class="left_aside">
+  <% user['socialAccounts']['nodes'].each do |social| %>
+    <%= link_to social['url'], target: '_blank' do %>
+      <%= social_icon(social['provider']) %>
+     <% end %>
+  <% end %>
+</div>

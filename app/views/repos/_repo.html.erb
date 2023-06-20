@@ -1,10 +1,11 @@
-<%= link_to repo_path(repo), class: 'repo', data: {
+<%= link_to repo_path(repo['name']), class: 'repo', data: {
   action: 'click->projects#click',
   projects_target: 'project_links',
-  id: repo.id
+  name: repo['name'],
+  link: repo['url']
 } do %>
   <div>
-    <h4><%= repo.name %></h4>
-    <p><%= repo.summary %></p>
+    <h4><%= repo['name'] %></h4>
+    <p><%= repo['description'] %></p>
   </div>
 <% end %>

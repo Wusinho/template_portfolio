@@ -1,13 +1,11 @@
 class ReposController < ApplicationController
-  before_action :set_repo, only: [:repo]
   rescue_from StandardError, with: :handle_error
 
-
   def repo
-    readme = @repo.repo_info
+    readme = Repo.repo_info(repo_params[:name])
       render json: {
         readme: readme,
-        repo_link: ApplicationController.render(partial: 'shared/repo_link', locals: { repo_link: @repo.repo_link })
+        repo_link: ApplicationController.render(partial: 'shared/repo_link', locals: { repo_link: repo_params[:link] })
       }
   end
 
@@ -19,8 +17,14 @@ class ReposController < ApplicationController
     }, status: :unprocessable_entity
   end
 
-
   def set_repo
     @repo = Repo.find(params[:id])
   end
+
+  private
+
+  def repo_params
+    params.require(:repo).permit(:name, :link)
+  end
+
 end

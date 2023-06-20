@@ -1,14 +1,14 @@
 class HomepagesController < ApplicationController
   before_action :github_information, only: [:index]
   def index
-    @time = Time.now
+    ScrapperJob.perform_later
   end
 
   private
 
   def github_information
-    @user = User.find_or_create_by(id: 1)
-    @github = JSON.parse(@user.update_user)
+    @user = ProfileServices.call
+
 
     @cv = ENV['GOOGLE_CV']
   end

@@ -1,11 +1,13 @@
 <div class="portfolio__container" data-controller="scroll" data-action="scroll@window->scroll#onScroll">
-  <%= render 'homepages/sides/left_aside', user: @user %>
+  <aside>
+    <%= render 'homepages/sides/left_aside', user: @user['user'] %>
+  </aside>
   <div class="section__container">
     <div class="hero__container container" data-controller="name" data-scroll-target="home" id='home'>
-      <%= render 'homepages/sections/hero', locals: { github: @github, cv: @cv } %>
+      <%= render 'homepages/sections/hero', user: @user['user'] %>
     </div>
     <div class="project__container" data-scroll-target="projects" id='projects'>
-      <%= render 'homepages/sections/projects' %>
+      <%= render 'homepages/sections/projects', repos: @user['user']['pinnedItems']['nodes'] %>
     </div>
     <div class="container" data-scroll-target="about-me" id='about-me'>
       <%= render 'homepages/sections/about-me' %>
@@ -18,3 +20,4 @@
     <%= render 'homepages/sides/right_aside', user: @user %>
   </aside>
 </div>
+
