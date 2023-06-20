@@ -69,7 +69,8 @@ export default class extends Controller {
 
   activate_about_view(){
     if (this.current_active_link.dataset.target !== 'about-me') { return }
-    this.current_active_link.setAttribute('data-controller', 'about')
+    const about__container = document.getElementById('about__container')
+    about__container.setAttribute('data-controller', 'about')
   }
 
 }

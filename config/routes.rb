@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post 'repo'
     end
   end
+  resources :scrapper
   # Defines the root path route ("/")
   root "homepages#index"
 end
