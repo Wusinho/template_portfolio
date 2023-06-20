@@ -5,7 +5,7 @@ class ScrapperServices
     response = Faraday.get(url)
 
     if response.status == 200
-      p url
+
       doc = Nokogiri::HTML(response.body)
       profile = doc.css('.profile__container p')
 

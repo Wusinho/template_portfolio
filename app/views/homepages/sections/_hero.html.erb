@@ -10,11 +10,7 @@
       <%= link_to 'Know me !!', ENV['GOOGLE_CV'], target: '_blank', class: cta %>
     </div>
   </section>
-  <%= link_to root_path, class: 'image__container', data: {
-    action: 'click->scroll#scrollToSection',
-    scroll_target: 'navlinks',
-    target: 'about-me'
-  } do %>
+  <div class="image__container">
     <div class="box"></div>
     <%= image_tag user['avatarUrl'], class: 'hero__image' %>
-  <% end %>
+  </div>
