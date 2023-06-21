@@ -1,40 +1,43 @@
 @import "colors";
 
 .about__container {
-  margin: 20px;
-}
+  padding: 20px;
+  #about__container {
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+    .about-me__container {
+      width: 100%;
+      div strong {
+        color: $primary_color;
+      }
+    }
 
-#about__me strong {
-  color: $primary_color;
-}
+    .icons__container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      div {
+        margin: 5px;
+        i {
+          font-size: 40px;
 
-.icons__container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0 20px;
-}
+        }
+      }
+    }
 
-.icons__container div {
-  padding: 10px 20px;
-}
-
-.icons__container i {
-  font-size: 40px;
-}
-
-@media (max-width: 768px) {
-  .icons__container {
-    flex-wrap: wrap;
-    margin: 0;
-    justify-content: center;
   }
 
-  .icons__container div {
-    margin: 5px;
-  }
 
-  .icons__container i {
-    font-size: 18px;
-  }
+
+
 }
+
+//.icons__container {
+//  width: 100%;
+//  display: flex;
+//  justify-content: center;
+//  margin: 0 20px;
+//}
+

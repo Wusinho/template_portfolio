@@ -6,7 +6,6 @@ aside {
   height: 100vh;
   .right_aside, .left_aside {
     margin-top: 100px;
-    height: 80%;
     display: flex;
     justify-content: space-around;
     .nav__link {
@@ -25,17 +24,25 @@ aside {
       pointer-events: none;
     }
   }
-  .left_aside i {
-    font-size: 50px;
-    color: $font;
-    padding-left: 20px;
-    transition: color 0.5s ease;
-    &:hover {
-      color: $primary_color;
-      animation: blink 1s infinite;
-      text-decoration: underline;
+  .right_aside {
+    height: 80%;
+  }
+
+  .left_aside {
+    i {
+      width: 100%;
+      font-size: 50px;
+      color: $font;
+      padding-left: 20px;
+      transition: color 0.5s ease;
+      &:hover {
+        color: $primary_color;
+        animation: blink 1s infinite;
+        text-decoration: underline;
+      }
     }
   }
+
 
 }
 
