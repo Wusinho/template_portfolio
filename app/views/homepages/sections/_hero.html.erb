@@ -1,13 +1,16 @@
 <div class="information__container">
   <div class="d-none" data-name-target="name" ><%= name_list(user['name']) %></div>
-  <div class="information__title">
-    <h2 class="hero__name">Hello, My name is</h2>
-    <h1><%= user['name'] %></h1>
-  </div>
+
   <section>
-    <p>
-        <%= user['bio'] %>
-    </p>
+    <div class="information__title">
+      <h2 >Hello, My name is</h2>
+      <div>
+        <h1 class="hero__name"><%= user['name'] %></h1>
+        <h1 class="d-none">About Me</h1>
+      </div>
+      <p><%= user['bio'] %></p>
+    </div>
+
     <%= link_to ENV['GOOGLE_CV'], target: '_blank', class: 'image__container', data: {
     } do %>
       <%= image_tag user['avatarUrl'], class: 'hero__image' %>
