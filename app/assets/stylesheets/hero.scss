@@ -11,9 +11,7 @@
     padding: 0 30px;
     width: 60vw;
     .information__title{
-      //height: 500px;
       position: absolute;
-      //top: -30px;
       h2 {
         margin: 0;
         font-size: 1.8rem;
@@ -22,9 +20,8 @@
       h1 {
         font-size: 7rem;
         margin: 0;
-        span {
-          color: $primary_color;
-        }
+        pointer-events: none;
+        color: $primary_color;
       }
     }
 
@@ -85,5 +82,40 @@
   }
   100% {
     filter: blur(0);
+  }
+}
+
+@keyframes blinked {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1501px) and (max-width: 1900px) {
+  .information__title {
+    top: -40px;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1500px) {
+  .hero__container {
+    .information__title {
+      bottom: 250px;
+      z-index: 2;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .hero__container {
+    .information__title {
+      position: relative !important;
+    }
   }
 }
