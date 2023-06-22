@@ -56,7 +56,7 @@ export default class extends Controller {
     this.activate_about_view()
   }
 
-  save_scroll_links(links, scrollPosition) {
+  save_scroll_links(links) {
     const obj = {}
     links.forEach((link) => {
       const targetId = link.dataset.target;
@@ -69,8 +69,8 @@ export default class extends Controller {
 
   update_current_active_link(new_active_link){
     this.current_active_link.classList.remove('active')
-    new_active_link.classList.add('active')
-    this.current_active_link = this.scroll_window
+    this.current_active_link = new_active_link
+    this.current_active_link.classList.add('active')
   }
 
   activate_about_view(){
