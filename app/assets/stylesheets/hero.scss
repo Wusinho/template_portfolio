@@ -1,47 +1,73 @@
 @import "colors";
 
 .hero__container {
-  section {
-    width: 40vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-right: 30px;
+  height: 100vh;
+  border-left: 1px solid $grey;
+  display: grid;
+  place-items: center;
 
-    p {
-      color: $grey;
-      margin: 0;
-    }
-
-    h1 {
-      font-size: 50px;
-    }
-  }
-
-  .image__container {
+  .information__container{
     position: relative;
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    &:hover .box {
-      width: 100%;
-      background-color: $redish;
-      transition: 0.5s ease;
-    }
-
-    .box {
-      width: 20px;
-      height: 20px;
-      transition: 1s linear;
-      background-color: $primary_color;
+    padding: 0 30px;
+    width: 60vw;
+    .information__title{
+      //height: 500px;
       position: absolute;
-      bottom: 0;
-      right: 0;
+      //top: -30px;
+      h2 {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+
+      h1 {
+        font-size: 7rem;
+        margin: 0;
+        span {
+          color: $primary_color;
+        }
+      }
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      p {
+        color: $grey;
+        margin: 0;
+        line-height: 3rem;
+        width: 80%;
+      }
+
+    }
+
+    .image__container {
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      &:hover .box {
+        width: 100%;
+        background-color: $redish;
+        transition: 0.5s ease;
+      }
+
+      .box {
+        width: 20px;
+        height: 20px;
+        transition: 1s linear;
+        background-color: $primary_color;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
+
+
+
 }
 
 @keyframes slide-in {

@@ -5,9 +5,8 @@ aside {
   top: 0;
   height: 100vh;
   .right_aside, .left_aside {
-    margin-top: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     .nav__link {
       display: flex;
       color: $grey;
@@ -25,7 +24,7 @@ aside {
     }
   }
   .right_aside {
-    height: 80%;
+    height: 100%;
   }
 
   .left_aside {

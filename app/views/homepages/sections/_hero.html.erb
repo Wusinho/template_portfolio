@@ -1,21 +1,22 @@
+<div class="information__container">
   <div class="d-none" data-name-target="name" ><%= name_list(user['name']) %></div>
+  <div class="information__title">
+    <h2 class="hero__name">Hello, My name is</h2>
+    <h1>
+          <span class="name">
+            <%= user['name'] %>
+          </span>
+    </h1>
+  </div>
   <section>
-    <div>
-      <h1 class="hero__name">Hello, My name is
-        <span class="name">
-          <%= user['name'] %>
-        </span>
-<!--        <span class="name" data-name-target="replace">Jhon Doe</span>-->
-      </h1>
-      <p>
+    <p>
         <%= user['bio'] %>
-      </p>
-    </div>
-  </section>
-  <%= link_to ENV['GOOGLE_CV'], target: '_blank', class: 'image__container', data: {
+    </p>
+    <%= link_to ENV['GOOGLE_CV'], target: '_blank', class: 'image__container', data: {
     } do %>
       <%= image_tag user['avatarUrl'], class: 'hero__image' %>
       <div class="box"></div>
-  <% end %>
-
+    <% end %>
+  </section>
+</div>
 
