@@ -7,12 +7,30 @@
   place-items: center;
   position: relative;
 
+  .left__triangle {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-left: 60px solid $grey;
+  }
+
   .hero__box {
     position: absolute;
     bottom: 0;
-    height: 15%;
+    height: 5%;
     width: 100%;
     background-color: $grey;
+  }
+
+  .right__triangle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top: 68px solid $back_ground_color;
+    border-left: 68px solid $grey;
   }
 
   .information__container {
