@@ -29,7 +29,7 @@ body {
 
 .portfolio__container {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 40px;
   grid-template-areas:
   'section__container right_aside'
 }

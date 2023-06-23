@@ -5,9 +5,21 @@
   height: 100vh;
   display: grid;
   place-items: center;
+  position: relative;
+
+  .hero__box {
+    position: absolute;
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+    background-color: $grey;
+  }
 
   .information__container {
     max-width: 1091px;
+    display: flex;
+    align-items: center;
+    align-content: center;
 
     .h2 {
       margin: 0;

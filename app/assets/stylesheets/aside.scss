@@ -4,10 +4,10 @@ aside {
   position: sticky;
   top: 0;
   height: 100vh;
-  .right_aside, .left_aside {
+  margin-left: 10px;
+  .right_aside {
     display: flex;
     justify-content: space-evenly;
-
       .nav__link {
         display: flex;
         color: $grey;
