@@ -1,9 +1,12 @@
 <div class="information__container">
   <section>
-      <h2 class="welcome" data-name-target="diminishables">Hello, My name is</h2>
+      <div class="display_welcome">
+        <h2 class="welcome" data-name-target="diminishables">Hello, My name is</h2>
+        <h2 class="learn__more" data-name-target="replaces">Lear More</h2>
+      </div>
       <div data-name-target="display_names">
         <h1 class="hero__name" data-name-target="diminishables"><%= user['name'] %></h1>
-        <h1 class="information__about" data-name-target="replace">About Me</h1>
+        <h1 class="information__about" data-name-target="replaces">About Me</h1>
       </div>
     <div class="bio__container">
       <p data-name-target="diminishables"><%= user['bio'] %></p>

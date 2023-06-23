@@ -2,11 +2,12 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
   static targets = [
-    'replace',
+    'replaces',
     'images',
     'box', 'box_2',
     'display_names',
-    'diminishables'
+    'diminishables',
+      'learn'
   ];
 
   connect() {
@@ -15,7 +16,9 @@ export default class extends Controller {
   }
 
   handleMouseEnter = (event) => {
-    this.replaceTarget.classList.add('replace')
+    this.replacesTargets.forEach((replacer)=>{
+      replacer.classList.add('replace')
+    })
     this.boxTarget.classList.add('stretch')
     this.box_2Target.classList.add('stretch_up')
     this.diminishablesTargets.forEach((target)=>{
@@ -28,9 +31,11 @@ export default class extends Controller {
     this.diminishablesTargets.forEach((target)=>{
       target.classList.remove('vanish')
     })
+    this.replacesTargets.forEach((replacer)=>{
+      replacer.classList.remove('replace')
+    })
     this.boxTarget.classList.remove('stretch')
     this.box_2Target.classList.remove('stretch_up')
-    this.replaceTarget.classList.remove('replace')
     this.display_namesTarget.classList.remove('border_right')
   }
 }

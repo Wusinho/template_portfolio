@@ -29,9 +29,9 @@ body {
 
 .portfolio__container {
   display: grid;
-  grid-template-columns: 100px 1fr 50px;
+  grid-template-columns: 1fr 50px;
   grid-template-areas:
-  'left_aside section__container right_aside'
+  'section__container right_aside'
 }
 
 .left_aside, .right_aside {

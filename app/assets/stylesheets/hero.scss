@@ -3,14 +3,13 @@
 /* Hero Container */
 .hero__container {
   height: 100vh;
-  border-left: 1px solid $grey;
   display: grid;
   place-items: center;
 
   .information__container {
-    width: 60vw;
+    max-width: 1091px;
 
-    .welcome {
+    .h2 {
       margin: 0;
       font-size: 1.8rem;
     }
@@ -49,6 +48,23 @@
       margin: 0;
       pointer-events: none;
     }
+    .display_welcome {
+      display: flex;
+      .welcome, .learn__more {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .learn__more {
+        opacity: 0;
+        transition: 1s ease;
+      }
+      .replace {
+        opacity: 1;
+        transform: translateX(-100%);
+        transition: 1s ease;
+      }
+    }
 
     div {
       position: relative;
@@ -64,7 +80,6 @@
 
       .replace {
         opacity: 1;
-        font-size: 7rem;
         transform: translateX(-100%);
         transition: 1s ease;
       }
