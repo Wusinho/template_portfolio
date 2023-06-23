@@ -13,6 +13,7 @@ aside {
       text-decoration: none;
       font-size: 18px;
       transition: filter 0.3s ease-in-out;
+      border-left: 1px solid black;
       &:hover{
         filter: drop-shadow(0 0 5px $primary_color) blur(2px);
         transition: filter 0.3s ease-in-out;
@@ -21,6 +22,8 @@ aside {
     .active {
       color: $primary_color;
       pointer-events: none;
+      border-left: 1px solid $primary_color;
+      transition: 0.5s ease;
     }
   }
   .right_aside {

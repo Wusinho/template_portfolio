@@ -6,16 +6,17 @@
       <h2 >Hello, My name is</h2>
       <div>
         <h1 class="hero__name"><%= user['name'] %></h1>
-        <h1 class="d-none">About Me</h1>
+        <h1 class="information__about">About Me</h1>
       </div>
       <p><%= user['bio'] %></p>
     </div>
-
-    <%= link_to ENV['GOOGLE_CV'], target: '_blank', class: 'image__container', data: {
-    } do %>
-      <%= image_tag user['avatarUrl'], class: 'hero__image' %>
-      <div class="box"></div>
-    <% end %>
+    <div class="image__container">
+      <%= link_to ENV['GOOGLE_CV'], target: '_blank', data: {
+      } do %>
+        <%= image_tag user['avatarUrl'], class: 'hero__image' %>
+        <div class="box"></div>
+      <% end %>
+    </div>
   </section>
 </div>
 

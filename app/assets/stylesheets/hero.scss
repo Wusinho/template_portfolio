@@ -7,11 +7,8 @@
   place-items: center;
 
   .information__container{
-    //position: relative;
-    //padding: 0 30px;
     width: 60vw;
     .information__title{
-      //position: absolute;
       h2 {
         margin: 0;
         font-size: 1.8rem;
@@ -24,8 +21,15 @@
         color: $primary_color;
       }
 
+      .information__about {
+        display: none;
+      }
+
       h1 {
-        color: red;
+        color: $redish;
+        font-size: 7rem;
+        margin: 0;
+        pointer-events: none;
       }
     }
 
@@ -56,6 +60,10 @@
         transition: 0.5s ease;
       }
 
+      &:hover .information__about {
+        display: block;
+      }
+
 
       .box {
         width: 20px;
@@ -75,8 +83,23 @@
 
 .image__container {
   background-color: #00f0ff;
-  //color: red;
 }
+
+//.image__container:hover .information__about {
+//  display: block;
+//  //background-color: #00f0ff;
+//}
+
+//.image__container:hover + .information__title .hero__name {
+//  color: green;
+//}
+//.image__container:hover ~ .information__title h1.hero__name {
+//  color: green;
+//}
+.image__container:hover + .information__title .hero__name {
+  color: green;
+}
+
 
 @keyframes slide-in {
   0% {
@@ -107,26 +130,3 @@
     opacity: 0;
   }
 }
-
-//@media (min-width: 1501px) and (max-width: 1900px) {
-//  .information__title {
-//    top: -40px;
-//  }
-//}
-//
-//@media (min-width: 981px) and (max-width: 1500px) {
-//  .hero__container {
-//    .information__title {
-//      bottom: 250px;
-//      z-index: 2;
-//    }
-//  }
-//}
-//
-//@media (max-width: 980px) {
-//  .hero__container {
-//    .information__title {
-//      position: relative !important;
-//    }
-//  }
-//}
