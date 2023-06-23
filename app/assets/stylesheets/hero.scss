@@ -8,10 +8,18 @@
 
   .information__container{
     width: 60vw;
-      h2 {
+
+      .welcome {
         margin: 0;
         font-size: 1.8rem;
       }
+
+    p {
+      color: $grey;
+      margin: 0;
+      line-height: 3rem;
+      width: 80%;
+    }
 
       .hero__name {
         font-size: 7rem;
@@ -21,6 +29,11 @@
         color: $primary_color;
         opacity: 1;
         width: 100%;
+        transition: 1s ease;
+      }
+
+      .vanish {
+        opacity: 0;
         transition: 1s ease;
       }
 
@@ -46,24 +59,37 @@
           transform: translateX(-100%);
           transition: 1s ease;
         }
-        .vanish {
-          opacity: 0;
-          transition: 1s ease;
-        }
+
 
     }
 
     section {
       .bio__container{
         display: flex;
+        position: relative;
+        .box {
+          width: 20px;
+          height: 20px;
+          background-color: $primary_color;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transition: 1s ease;
+        }
+
+        .stretch {
+          width: 100%;
+          height: 1px;
+          background-color: $redish;
+        }
+        .stretch_up {
+          width: 1px;
+          height: 100%;
+          background-color: $redish;
+        }
       }
 
-      p {
-        color: $grey;
-        margin: 0;
-        line-height: 3rem;
-        width: 80%;
-      }
+
 
     }
 
@@ -104,9 +130,12 @@
 
 }
 
-.image__container {
-  //background-color: #00f0ff;
+
+.vanish {
+  opacity: 0;
+  transition: 1s ease;
 }
+
 
 //.image__container:hover .information__about {
 //  display: block;

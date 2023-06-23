@@ -1,21 +1,22 @@
 <div class="information__container">
   <section>
-      <h2 >Hello, My name is</h2>
+      <h2 class="welcome" data-name-target="welcome">Hello, My name is</h2>
       <div>
         <h1 class="hero__name" data-name-target="name"><%= user['name'] %></h1>
         <h1 class="information__about" data-name-target="replace">About Me</h1>
       </div>
     <div class="bio__container">
-      <p><%= user['bio'] %></p>
+      <p data-name-target="bio"><%= user['bio'] %></p>
       <div class="image__container" data-name-target="images">
         <%= link_to root_path, class: 'image__container', data: {
           action: 'click->scroll#scrollToSection',
           target: 'about-me',
         } do %>
-          <div class="box"></div>
           <%= image_tag user['avatarUrl'], class: 'hero__image' %>
         <% end %>
       </div>
+      <div class="box" data-name-target="box"></div>
+      <div class="box" data-name-target="box_2"></div>
     </div>
   </section>
 </div>
