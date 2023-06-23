@@ -14,13 +14,12 @@
  *= require_self
  */
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code:wght@400;600&display=swap');
 @import "colors";
 @import "aside";
 
 body {
+  //font-family: 'Raleway', sans-serif;
   font-family: 'Fira Code', monospace;
   background-color: $back_ground_color;
   color: $font;

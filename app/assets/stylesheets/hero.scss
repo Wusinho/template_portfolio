@@ -7,6 +7,17 @@
   place-items: center;
   position: relative;
 
+  .back-ground__bio{
+    top: 0;
+    z-index: -1;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    opacity: 0.04;
+    position: absolute;
+    font-size: 130px;
+    pointer-events: none;
+  }
+
   .left__triangle {
     position: absolute;
     left: 0;
@@ -29,8 +40,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    border-top: 68px solid $back_ground_color;
-    border-left: 68px solid $grey;
+    border-top: 69px solid $back_ground_color;
+    border-left: 69px solid $grey;
   }
 
   .information__container {
