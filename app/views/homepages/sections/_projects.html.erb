@@ -1,5 +1,5 @@
-
   <div class="repos__container" data-controller="projects">
+    <div class="bar"></div>
     <div class="repos">
       <% repos.each do |repo| %>
         <%= render 'repos/repo', repo: repo %>
@@ -7,7 +7,7 @@
     </div>
     <div class="selected__repo" >
       <%= render 'shared/loader' %>
-      <div data-projects-target="selected_repo">
+      <div data-projects-target="selected_repo" class="selected__readme d-none">
       </div>
     </div>
   </div>
