@@ -4,25 +4,64 @@ aside {
   position: sticky;
   top: 0;
   height: 100vh;
-  .right_aside, .left_aside {
-    margin-top: 100px;
-    height: 80%;
+  margin-left: 10px;
+  .right_aside {
     display: flex;
-    justify-content: space-around;
-    .nav__link {
-      display: flex;
-      color: $grey;
-      text-decoration: none;
-      font-size: 18px;
-      transition: filter 0.3s ease-in-out;
-      &:hover{
-        filter: drop-shadow(0 0 5px $primary_color) blur(2px);
+    justify-content: space-evenly;
+      .nav__link {
+        display: flex;
+        color: $grey;
+        text-decoration: none;
+        font-size: 18px;
         transition: filter 0.3s ease-in-out;
+        border-left: 1px solid black;
+        &:hover{
+          filter: drop-shadow(0 0 5px $primary_color) blur(2px);
+          transition: filter 0.3s ease-in-out;
+        }
+      }
+
+      .active {
+        z-index: -1;
+        color: $primary_color;
+        pointer-events: none;
+        border-left: 1px solid $primary_color;
+        transition: 0.5s ease;
+      }
+
+
+
+  }
+  .right_aside {
+    height: 100%;
+  }
+
+  .left_aside {
+    i {
+      width: 100%;
+      font-size: 50px;
+      color: $font;
+      padding-left: 20px;
+      transition: color 0.5s ease;
+      &:hover {
+        color: $primary_color;
+        animation: blink 1s infinite;
+        text-decoration: underline;
       }
     }
-    .active {
-      color: $primary_color;
-      pointer-events: none;
-    }
+  }
+
+
+}
+
+@keyframes blink {
+  0% {
+    text-decoration: none;
+  }
+  50% {
+    text-decoration: underline;
+  }
+  100% {
+    text-decoration: none;
   }
 }

@@ -14,13 +14,12 @@
  *= require_self
  */
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comfortaa:wght@300&family=Fira+Code:wght@400;600&display=swap');
 @import "colors";
 @import "aside";
 
 body {
+  //font-family: 'Raleway', sans-serif;
   font-family: 'Fira Code', monospace;
   background-color: $back_ground_color;
   color: $font;
@@ -29,10 +28,9 @@ body {
 
 .portfolio__container {
   display: grid;
-  grid-template-columns: 25px 1fr 25px;
-  gap: 150px;
+  grid-template-columns: 1fr 40px;
   grid-template-areas:
-  'left_aside section__container right_aside'
+  'section__container right_aside'
 }
 
 .left_aside, .right_aside {
@@ -69,4 +67,25 @@ body {
   opacity: 0;
   transition: opacity 1s ease, height 1s ease;
   pointer-events: none;
+}
+
+
+/* Track */
+::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+}
+
+/* Track - background */
+::-webkit-scrollbar-track {
+  background: $font; /* color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $grey; /* color of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the handle when hovering */
 }

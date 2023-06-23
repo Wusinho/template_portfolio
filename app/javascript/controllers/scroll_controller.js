@@ -3,11 +3,12 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="scroll"
 export default class extends Controller {
 
-  static targets = ['navlinks']
+  static targets = ['navlinks', 'images']
   static values = { open: Boolean }
   static classes = ["opened"]
 
   connect(){
+
     this.all_positions = this.save_scroll_links(this.navlinksTargets, window.scrollY)
     this.current_active_link = this.active_link(this.all_positions)
     this.current_active_link.classList.add('active')
@@ -17,18 +18,24 @@ export default class extends Controller {
   }
 
   active_link(positions) {
+    let id = this.conditions(positions)
+    return Array.from(this.navlinksTargets).find((link) => {
+      return link.dataset.target === id;
+    });
+  }
+
+  conditions(positions) {
     const scrollPosition = window.scrollY;
-    let id = ''
-    if ( scrollPosition >= positions['home'].beginning && scrollPosition < positions['home'].end ){
-      id = 'home'
-    } else if ( scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end ) {
-      id = 'projects'
-    } else if ( scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end ) {
-      id = 'about-me'
+
+    if (scrollPosition >= positions['home'].beginning && scrollPosition < positions['home'].end) {
+      return 'home';
+    } else if (scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end) {
+      return 'projects';
+    } else if (scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end) {
+      return 'about-me';
     } else {
-      id = 'contact-me'
+      return 'contact-me';
     }
-    return document.querySelector(`[data-target="${id}"]`)
   }
 
   scrollToSection(event) {
@@ -50,7 +57,7 @@ export default class extends Controller {
     this.activate_about_view()
   }
 
-  save_scroll_links(links, scrollPosition) {
+  save_scroll_links(links) {
     const obj = {}
     links.forEach((link) => {
       const targetId = link.dataset.target;
@@ -63,13 +70,24 @@ export default class extends Controller {
 
   update_current_active_link(new_active_link){
     this.current_active_link.classList.remove('active')
-    new_active_link.classList.add('active')
-    this.current_active_link = this.scroll_window
+    this.current_active_link = new_active_link
+    this.current_active_link.classList.add('active')
   }
 
   activate_about_view(){
     if (this.current_active_link.dataset.target !== 'about-me') { return }
-    this.current_active_link.setAttribute('data-controller', 'about')
+    const about__container = document.getElementById('about__container')
+    about__container.setAttribute('data-controller', 'about')
+  }
+
+  handleMouseEnter = (event) => {
+    // Code to run when the element is hovered (mouseenter event)
+    console.log('Mouse entered the element');
+  }
+
+  handleMouseLeave = (event) => {
+    // Code to run when the element is no longer hovered (mouseleave event)
+    console.log('Mouse left the element');
   }
 
 }

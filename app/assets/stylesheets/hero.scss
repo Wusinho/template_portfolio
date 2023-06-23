@@ -1,74 +1,185 @@
 @import "colors";
 
+/* Hero Container */
 .hero__container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
 
-  section {
-    width: 40vw;
+  .back-ground__bio{
+    top: 0;
+    z-index: -1;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    opacity: 0.04;
+    position: absolute;
+    font-size: 130px;
+    pointer-events: none;
+  }
+
+  .left__triangle {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-left: 60px solid $grey;
+  }
+
+  .hero__box {
+    position: absolute;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    background-color: $grey;
+  }
+
+  .right__triangle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top: 69px solid $back_ground_color;
+    border-left: 69px solid $grey;
+  }
+
+  .information__container {
+    max-width: 1091px;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding-right: 30px;
+    align-content: center;
+
+    .h2 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
 
     p {
       color: $grey;
-      margin: 50px 0 40px 0;
+      margin: 0;
+      line-height: 3rem;
+      width: 80%;
     }
-  }
 
-  .image__container {
-    height: 300px;
-    width: 300px;
-    position: relative;
-    overflow: hidden;
+    .border_right {
+      border-right: 10px dashed $primary_color;
+      transition: 0.3s ease;
+    }
 
-    &::before {
-      content: "";
-      position: absolute;
+    .hero__name {
+      font-size: 7rem;
+      margin: 0;
+      padding: 0;
+      pointer-events: none;
+      color: $primary_color;
+      opacity: 1;
       width: 100%;
-      height: 100%;
-      background-color: transparent;
-      transition: background-color 1s ease;
-      z-index: 1;
+      transition: 1s ease;
     }
 
-    .box {
-      z-index: 2;
-      width: 10px;
-      height: 10px;
-      background-color: $primary_color;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      transition: background-color 1s ease;
+    .vanish {
+      opacity: 0;
+      transition: 1s ease;
     }
-    &:hover::before {
-      content: "About me";
+
+    h1 {
       color: $redish;
-      background-color: $primary_color;
+      font-size: 7rem;
+      margin: 0;
+      pointer-events: none;
+    }
+    .display_welcome {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      .welcome, .learn__more {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .learn__more {
+        opacity: 0;
+        transition: 1s ease;
+      }
+      .replace {
+        opacity: 1;
+        transform: translateX(-100%);
+        transition: 1s ease;
+      }
     }
-    &:hover .box {
-      background-color: $redish;
-      animation: slide-in 0.5s ease forwards;
+
+    div {
+      position: relative;
+      display: flex;
+
+      .information__about {
+        opacity: 0;
+        transition: 1s ease;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+
+      .replace {
+        opacity: 1;
+        transform: translateX(-100%);
+        transition: 1s ease;
+      }
     }
   }
 
-  .hero__image {
-    width: 100%;
-    height: auto;
+  /* Section */
+  section {
+    .bio__container {
+      display: flex;
+      position: relative;
+
+      .box {
+        width: 20px;
+        height: 20px;
+        background-color: $redish;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: 1s ease;
+      }
+
+      .stretch {
+        width: 100%;
+        height: 1px;
+        background-color: $primary_color;
+      }
+
+      .stretch_up {
+        width: 1px;
+        height: 100%;
+        background-color: $primary_color;
+      }
+    }
   }
 
-  .hero__name .name {
-    z-index: 99999;
-    display: inline-block;
-    opacity: 1;
-    animation: fade-in 0.1s ease-in, scale-down 1s linear;
-    color: $primary_color;
+  /* Image Container */
+  .image__container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 }
 
+/* Animation Keyframes */
+@keyframes slide-in {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
 @keyframes blur-in {
   0% {
@@ -79,47 +190,14 @@
   }
 }
 
-@keyframes pixelate {
+@keyframes blinked {
   0% {
-    border-width: 100px;
+    opacity: 0;
   }
-  100% {
-    border-width: 10px;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0.3;
-  }
-  to {
-    opacity: 0.1;
-  }
-}
-
-@keyframes scale-down {
-  from {
-    transform: scale(3);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-in {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes fade-out {
-  from {
-    opacity: 0.1;
-  }
-  to {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
