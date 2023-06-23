@@ -1,18 +1,19 @@
 @import "colors";
 
+/* Hero Container */
 .hero__container {
   height: 100vh;
   border-left: 1px solid $grey;
   display: grid;
   place-items: center;
 
-  .information__container{
+  .information__container {
     width: 60vw;
 
-      .welcome {
-        margin: 0;
-        font-size: 1.8rem;
-      }
+    .welcome {
+      margin: 0;
+      font-size: 1.8rem;
+    }
 
     p {
       color: $grey;
@@ -21,138 +22,118 @@
       width: 80%;
     }
 
-      .hero__name {
-        font-size: 7rem;
-        margin: 0;
-        padding: 0;
-        pointer-events: none;
-        color: $primary_color;
-        opacity: 1;
-        width: 100%;
-        transition: 1s ease;
-      }
+    .hero__name {
+      font-size: 7rem;
+      margin: 0;
+      padding: 0;
+      pointer-events: none;
+      color: $primary_color;
+      opacity: 1;
+      width: 100%;
+      transition: 1s ease;
+    }
 
-      .vanish {
+    .vanish {
+      opacity: 0;
+      transition: 1s ease;
+    }
+
+    h1 {
+      color: $redish;
+      font-size: 7rem;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    div {
+      position: relative;
+      display: flex;
+
+      .information__about {
         opacity: 0;
         transition: 1s ease;
-      }
-
-      h1 {
-        color: $redish;
-        font-size: 7rem;
         margin: 0;
-        pointer-events: none;
-      }
-      div {
-        position: relative;
-        display: flex;
-        .information__about {
-          opacity: 0;
-          transition: 1s ease;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-        }
-        .replace {
-          opacity: 1;
-          font-size: 7rem;
-          transform: translateX(-100%);
-          transition: 1s ease;
-        }
-
-
-    }
-
-    section {
-      .bio__container{
-        display: flex;
-        position: relative;
-        .box {
-          width: 20px;
-          height: 20px;
-          background-color: $primary_color;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          transition: 1s ease;
-        }
-
-        .stretch {
-          width: 100%;
-          height: 1px;
-          background-color: $redish;
-        }
-        .stretch_up {
-          width: 1px;
-          height: 100%;
-          background-color: $redish;
-        }
-      }
-
-
-
-    }
-
-    .image__container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      img {
+        padding: 0;
         width: 100%;
-        height: auto;
-        display: block;
       }
 
-      &:hover .box {
+      .replace {
+        opacity: 1;
+        font-size: 7rem;
+        transform: translateX(-100%);
+        transition: 1s ease;
+      }
+    }
+  }
+
+  /* Section */
+  section {
+    .bio__container {
+      display: flex;
+      position: relative;
+
+      .box {
+        width: 20px;
+        height: 20px;
+        background-color: $primary_color;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: 1s ease;
+      }
+
+      .stretch {
+        width: 100%;
+        height: 1px;
+        background-color: $redish;
+      }
+
+      .stretch_up {
+        width: 1px;
+        height: 100%;
+        background-color: $redish;
+      }
+    }
+  }
+
+  /* Image Container */
+  .image__container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &:hover {
+      .box {
         width: 100%;
         height: 2px;
         background-color: $redish;
         transition: 0.5s ease;
       }
 
-      &:hover .information__about {
+      .information__about {
         display: block;
       }
+    }
 
-      .box {
-        width: 20px;
-        height: 20px;
-        transition: 0.5s ease;
-        background-color: $primary_color;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
+    .box {
+      width: 20px;
+      height: 20px;
+      transition: 0.5s ease;
+      background-color: $primary_color;
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
   }
-
-
-
 }
 
-
-.vanish {
-  opacity: 0;
-  transition: 1s ease;
-}
-
-
-//.image__container:hover .information__about {
-//  display: block;
-//  //background-color: #00f0ff;
-//}
-
-//.image__container:hover + .information__title .hero__name {
-//  color: green;
-//}
-//.image__container:hover ~ .information__title h1.hero__name {
-//  color: green;
-//}
-.image__container:hover + .information__title .hero__name {
-  color: green;
-}
-
-
+/* Animation Keyframes */
 @keyframes slide-in {
   0% {
     width: 0;
