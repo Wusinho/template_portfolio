@@ -3,16 +3,23 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="projects"
 export default class extends Controller {
   static targets = ['selected_repo', 'project_links', 'loader']
+  // static values = { switch: Boolean }
+  // static values = [Boolean]
   connect() {
   }
 
   click(e) {
     e.preventDefault();
     const selected__repo = this.selected_repoTarget;
+
+    const link = e.target.closest('a');
+    const current_active_link = this.activeLink(this.project_linksTargets)
+
+    if (current_active_link === link) return
     selected__repo.classList.add('d-none')
     selected__repo.innerHTML = '';
-    const link = e.target.closest('a');
-    this.enable_links(this.project_linksTargets)
+    this.clearCurrentLink(current_active_link)
+    link.dataset.projectsSwitchValue = 'true';
     const topTriangle = document.createElement('div')
     topTriangle.classList.add('top__triangle')
     const loader = this.loaderTarget;
@@ -34,26 +41,27 @@ export default class extends Controller {
         .then((json) => {
           loader.classList.add('d-none');
           const divElement = document.createElement('div')
-          const linkElement = document.createElement('div')
           divElement.classList.add('readme')
           if ( json.error ) {
             divElement.innerHTML = json.error;
           } else {
-            divElement.innerHTML = json.readme;
-            linkElement.innerHTML = json.repo_link
+            divElement.innerHTML = json.repo_link
             selected__repo.append(topTriangle)
             selected__repo.classList.remove('d-none')
           }
           selected__repo.prepend(divElement)
-          selected__repo.append(linkElement)
         })
   }
 
-  enable_links(links) {
-      links.forEach((link)=>{
-          link.classList.remove('invisible')
-      })
-  }
+    activeLink(links) {
+       return links.find((link) => link.dataset.projectsSwitchValue === 'true');
+    }
+
+    clearCurrentLink(link){
+        if (!link) { return}
+        link.dataset.projectsSwitchValue = 'false';
+    }
+
 
 
 }

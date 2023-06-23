@@ -51,13 +51,17 @@
           height: 20px;
           background-color: $redish;
           position: absolute;
-          top: 0;
+          bottom: 0;
           right: 0;
         }
         .readme {
           animation-name: readmeAnimation;
           animation-duration: 1s;
           animation-timing-function: ease;
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
         }
         .repo_link {
           text-decoration: none;
