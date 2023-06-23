@@ -1,33 +1,20 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ['name', 'replace'];
+  static targets = ['name', 'replace', 'images'];
 
   connect() {
-    const nameContainer = this.nameTarget;
-    const parentElement = this.replaceTarget.parentNode;
-    const nameList = JSON.parse(nameContainer.innerHTML);
-    this.iterateArray(nameList, parentElement);
+    this.imagesTarget.addEventListener('mouseenter', this.handleMouseEnter);
+    this.imagesTarget.addEventListener('mouseleave', this.handleMouseLeave);
   }
 
-  iterateArray(nameList, parentElement) {
-    let index = 0;
+  handleMouseEnter = (event) => {
+    // Code to run when the element is hovered (mouseenter event)
+    console.log(this.nameTarget)
+  }
 
-    const intervalId = setInterval(() => {
-      if (index >= nameList.length) {
-        clearInterval(intervalId);
-        return;
-      }
-
-      const name = nameList[index];
-      const newSpanElement = document.createElement('span');
-      newSpanElement.setAttribute('data-name-target', 'replace');
-      newSpanElement.innerHTML = name;
-      newSpanElement.classList.add('name');
-
-      parentElement.replaceChild(newSpanElement, this.replaceTarget);
-
-      index++;
-    }, 300);
+  handleMouseLeave = (event) => {
+    // Code to run when the element is no longer hovered (mouseleave event)
+    console.log('Mouse left the element');
   }
 }

@@ -3,11 +3,12 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="scroll"
 export default class extends Controller {
 
-  static targets = ['navlinks']
+  static targets = ['navlinks', 'images']
   static values = { open: Boolean }
   static classes = ["opened"]
 
   connect(){
+
     this.all_positions = this.save_scroll_links(this.navlinksTargets, window.scrollY)
     this.current_active_link = this.active_link(this.all_positions)
     this.current_active_link.classList.add('active')
@@ -77,6 +78,16 @@ export default class extends Controller {
     if (this.current_active_link.dataset.target !== 'about-me') { return }
     const about__container = document.getElementById('about__container')
     about__container.setAttribute('data-controller', 'about')
+  }
+
+  handleMouseEnter = (event) => {
+    // Code to run when the element is hovered (mouseenter event)
+    console.log('Mouse entered the element');
+  }
+
+  handleMouseLeave = (event) => {
+    // Code to run when the element is no longer hovered (mouseleave event)
+    console.log('Mouse left the element');
   }
 
 }

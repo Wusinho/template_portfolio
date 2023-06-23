@@ -1,20 +1,20 @@
 <div class="information__container">
-  <div class="d-none" data-name-target="name" ><%= name_list(user['name']) %></div>
-
   <section>
     <div class="information__title">
       <h2 >Hello, My name is</h2>
       <div>
-        <h1 class="hero__name"><%= user['name'] %></h1>
+        <h1 class="hero__name" data-name-target="name"><%= user['name'] %></h1>
         <h1 class="information__about">About Me</h1>
       </div>
       <p><%= user['bio'] %></p>
     </div>
-    <div class="image__container">
-      <%= link_to ENV['GOOGLE_CV'], target: '_blank', data: {
+    <div class="image__container" data-name-target="images">
+      <%= link_to root_path, class: 'image__container', data: {
+        action: 'click->scroll#scrollToSection',
+        target: 'about-me',
       } do %>
-        <%= image_tag user['avatarUrl'], class: 'hero__image' %>
         <div class="box"></div>
+        <%= image_tag user['avatarUrl'], class: 'hero__image' %>
       <% end %>
     </div>
   </section>
