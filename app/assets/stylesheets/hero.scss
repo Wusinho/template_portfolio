@@ -21,7 +21,7 @@
   .left__triangle {
     position: absolute;
     left: 0;
-    bottom: 5%;
+    bottom: 60px;
     width: 0;
     height: 0;
     border-top: 60px solid transparent;
@@ -31,7 +31,7 @@
   .hero__box {
     position: absolute;
     bottom: 0;
-    height: 5%;
+    height: 60px;
     width: 100%;
     background-color: $grey;
   }
@@ -40,8 +40,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    border-top: 69px solid $back_ground_color;
-    border-left: 69px solid $grey;
+    border-top: 60px solid $back_ground_color;
+    border-left: 60px solid $grey;
   }
 
   .information__container {
