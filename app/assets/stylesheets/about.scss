@@ -51,7 +51,7 @@
 
 
 /* Styles for viewport width from 0 to 600 pixels */
-@media (min-width: 0px) and (max-width: 1000px) {
+@media (min-width: 671px) and (max-width: 1000px) {
   /* Add your CSS styles here */
 
   .about__icons__container {
@@ -73,16 +73,26 @@
       }
     }
   }
-
-  //.icons__container {
-  //  background-color: yellow;
-  //  flex-wrap: nowrap !important;
-  //  flex-direction: row !important;
-  //  div i {
-  //    font-size: 3px;
-  //  }
-  //}
-
-  /* Add more styles as needed */
 }
 
+@media (min-width: 0px) and (max-width: 670px) {
+  .about__icons__container {
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-direction: column;
+    .about-me__container {
+      width: 100% !important;
+      margin-bottom: 80px;
+      padding: 0 !important;
+      div p {
+        font-size: 1.5rem !important;
+      }
+    }
+    .icons__container {
+      width: 100% !important;
+      div {
+        padding: 5px !important;
+      }
+    }
+  }
+}

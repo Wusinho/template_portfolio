@@ -201,3 +201,33 @@
     opacity: 0;
   }
 }
+
+@media (min-width: 670px) and (max-width: 1000px) {
+  .ground__bio {
+      font-size: 20px !important;
+  }
+}
+@media (min-width: 0px) and (max-width: 670px) {
+  .hero__container {
+    .information__container {
+      width: 500px;
+    }
+    .image__container {
+      width: 200px;
+      height: auto;
+    }
+
+    .display_names {
+      h1 {
+        font-size: 4rem !important;
+      }
+    }
+  }
+
+  .back-ground__bio {
+    font-size: 10px !important;
+  }
+
+
+}
+

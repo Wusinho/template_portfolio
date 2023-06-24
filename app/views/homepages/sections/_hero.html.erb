@@ -1,15 +1,15 @@
-<div class="back-ground__bio">
-  <% recruiters_list.each do |word| %>
-  <div><%= word %></div>
-  <% end %>
-</div>
+<!--<div class="back-ground__bio">-->
+  <%# recruiters_list.each do |word| %>
+<!--  <div><%#= word %></div>-->
+  <%# end %>
+<!--</div>-->
 <div class="information__container">
   <section>
       <div class="display_welcome">
         <h2 class="welcome" data-name-target="diminishables">Hello, My name is</h2>
         <h2 class="learn__more" data-name-target="replaces">Lear More</h2>
       </div>
-      <div data-name-target="display_names">
+      <div data-name-target="display_names" class="display_names">
         <h1 class="hero__name" data-name-target="diminishables"><%= user['name'] %></h1>
         <h1 class="information__about" data-name-target="replaces">About Me</h1>
       </div>
