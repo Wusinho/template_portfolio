@@ -202,9 +202,9 @@
   }
 }
 
-@media (min-width: 670px) and (max-width: 1000px) {
-  .ground__bio {
-      font-size: 20px !important;
+@media (min-width: 671px) and (max-width: 1000px) {
+  .hero__container .back-ground__bio {
+    font-size: 60px !important;
   }
 }
 @media (min-width: 0px) and (max-width: 670px) {
@@ -224,10 +224,8 @@
     }
   }
 
-  .back-ground__bio {
-    font-size: 60px !important;
+  .hero__container .back-ground__bio {
+    font-size: 50px !important;
   }
-
-
 }
 
