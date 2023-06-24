@@ -1,43 +1,88 @@
 @import "colors";
 
 .about__container {
-  //padding: 0 20px;
-  #about__container {
-    h2 {
-      margin-top: 0;
-      text-align: center;
-    }
-    .about-me__container {
-      width: 100%;
-      div strong {
-        color: $primary_color;
-      }
-    }
+  background-color: $redish;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  div {
+    max-width: 1091px;
+    padding: 0 10px;
 
-    .icons__container{
+    .about__icons__container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      div {
-        margin: 5px;
-        i {
-          font-size: 40px;
-
+      .about-me__container {
+        width: 65%;
+        h2 {
+          margin-top: 0;
+          text-align: center;
+          color: red;
+        }
+        p {
+          font-size: 2.5rem;
+          margin: 0;
+          line-height: 1.8em;
+        }
+        div strong {
+          color: $primary_color;
+        }
+      }
+      .icons__container{
+        width: 35%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+        div {
+          box-sizing: border-box;
+          flex: 0 0 auto;
+          margin: 0;
+          padding: 0;
+          i {
+            font-size: 80px;
+          }
         }
       }
     }
-
   }
-
-
-
-
 }
 
-//.icons__container {
-//  width: 100%;
-//  display: flex;
-//  justify-content: center;
-//  margin: 0 20px;
-//}
+
+/* Styles for viewport width from 0 to 600 pixels */
+@media (min-width: 0px) and (max-width: 1000px) {
+  /* Add your CSS styles here */
+
+  .about__icons__container {
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-direction: column;
+    .about-me__container {
+      width: 100% !important;
+      margin-bottom: 80px;
+      padding: 0 !important;
+      div p {
+        font-size: 1.8rem !important;
+      }
+    }
+    .icons__container {
+      width: 100% !important;
+      div {
+        padding: 5px !important;
+      }
+    }
+  }
+
+  //.icons__container {
+  //  background-color: yellow;
+  //  flex-wrap: nowrap !important;
+  //  flex-direction: row !important;
+  //  div i {
+  //    font-size: 3px;
+  //  }
+  //}
+
+  /* Add more styles as needed */
+}
 
