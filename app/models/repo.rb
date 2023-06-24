@@ -32,7 +32,7 @@ class Repo < ApplicationRecord
   end
 
   def self.remove_unnecessary_content(readme)
-    end_point_index = readme.index('## Description of the Project')
+    end_point_index = readme.index('## Objectives')
     description = end_point_index.nil? ? readme : readme[0...end_point_index]
     description.strip
   end
