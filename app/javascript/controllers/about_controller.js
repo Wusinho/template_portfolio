@@ -21,7 +21,6 @@ export default class extends Controller {
     }).then((response) => response.json())
         .then((about)=>{
             const about_me = this.about_meTarget
-            console.log(loader)
           loader.classList.add('d-none');
           about.paragraphs.forEach((p)=> {
               const divElement = document.createElement('div')

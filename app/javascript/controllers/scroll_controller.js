@@ -31,10 +31,8 @@ export default class extends Controller {
       return 'home';
     } else if (scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end) {
       return 'projects';
-    } else if (scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end) {
-      return 'about-me';
     } else {
-      return 'contact-me';
+      return 'about-me';
     }
   }
 

@@ -2,8 +2,6 @@
 
 .about__container {
   background-color: $redish;
-  display: flex;
-  align-items: center;
   align-content: center;
   div {
     max-width: 1091px;
@@ -13,13 +11,14 @@
       display: flex;
       .about-me__container {
         width: 65%;
+        //text-align: justify;
         h2 {
           margin-top: 0;
           text-align: center;
           color: red;
         }
         p {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           margin: 0;
           line-height: 1.5em;
         }
