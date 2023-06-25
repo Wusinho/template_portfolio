@@ -23,16 +23,14 @@
       justify-content: space-evenly;
       .repo {
         text-decoration: none;
-        border-right: 2px solid white;
-        border-bottom: 2px solid white;
+        border-right: 1px solid $grey;
+        border-bottom: 1px solid $grey;
         h4 {
-          color: $font;
+          color: $grey;
           text-align: center;
           margin: 10px;
           width: 200px;
           padding: 10px;
-          border-right: 2px solid $primary_color;
-          border-bottom: 2px solid $primary_color;
         }
       }
     }
@@ -44,8 +42,11 @@
       margin: 0 50px;
       .selected__readme {
         position: relative;
-        border: 1px solid $font;
+        border: 5px solid $font;
         padding: 50px;
+        h1 {
+          color: $redish;
+        }
         .top__triangle {
           width: 20px;
           height: 20px;
@@ -60,7 +61,7 @@
           animation-timing-function: ease;
           a {
             text-decoration: none;
-            color: inherit;
+            color: black;
           }
         }
         .repo_link {
