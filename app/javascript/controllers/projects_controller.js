@@ -20,6 +20,7 @@ export default class extends Controller {
     selected__repo.innerHTML = '';
     this.clearCurrentLink(current_active_link)
     link.dataset.projectsSwitchValue = 'true';
+    link.classList.add('active_repo')
     const topTriangle = document.createElement('div')
     topTriangle.classList.add('top__triangle')
     const loader = this.loaderTarget;
@@ -60,6 +61,7 @@ export default class extends Controller {
     clearCurrentLink(link){
         if (!link) { return}
         link.dataset.projectsSwitchValue = 'false';
+        link.classList.remove('active_repo')
     }
 
 

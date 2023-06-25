@@ -21,10 +21,33 @@
       height: 100%;
       flex-direction: column;
       justify-content: space-evenly;
+
+      .active_repo {
+        background-color: $redish;
+        border-right: 1px solid $redish !important;
+        border-bottom: 1px solid $redish !important;
+        pointer-events: none;
+        h4 {
+          color: white !important;
+        }
+      }
       .repo {
         text-decoration: none;
         border-right: 1px solid $grey;
         border-bottom: 1px solid $grey;
+        transition: 1s ease;
+
+
+
+        &:hover {
+          background-color: $redish;
+          border-right: 1px solid $redish;
+          border-bottom: 1px solid $redish;
+          h4 {
+            color: white;
+          }
+        }
+
         h4 {
           color: $grey;
           text-align: center;
