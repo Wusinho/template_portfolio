@@ -13,7 +13,7 @@
     left: 0;
     width: $line_position;
     height: 100%;
-    border-right: 1px solid $back_ground_grey;
+    border-right: 1px solid $grey;
     box-sizing: border-box;
   }
 
@@ -21,11 +21,19 @@
     top: 0;
     z-index: -1;
     font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    opacity: 0.025;
+    opacity: 0.03;
     position: absolute;
-    font-size: 100px;
+    font-size: 75px;
     pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .words {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding: 0 10px;
+    }
   }
 
   .left__triangle {
@@ -35,7 +43,7 @@
     width: 0;
     height: 0;
     border-top: 60px solid transparent;
-    border-left: 60px solid $grey;
+    border-left: 60px solid $back_ground_grey;
   }
 
   .hero__box {
@@ -43,7 +51,7 @@
     bottom: 0;
     height: 60px;
     width: 100%;
-    background-color: $grey;
+    background-color: $back_ground_grey;
 
   }
 
@@ -52,7 +60,7 @@
     bottom: -90px;
     right: 0;
     border-top: 151px solid $back_ground_color;
-    border-left: 151px solid $grey;
+    border-left: 151px solid $back_ground_grey;
   }
 
   .information__container {

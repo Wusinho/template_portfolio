@@ -7,30 +7,36 @@ module HomepagesHelper
 
   def recruiters_list
     [
-      'Programming Languages',
-      'Object-Oriented Programming',
-      'Agile Methodologies',
-      'Web Development',
-      'Mobile Development',
+      'JavaScript',
+      'React',
+      'Redux',
+      'Ruby',
+      'Rails',
+      'HTML',
+      'CSS',
+      'Agile',
+      'Web',
+      'Mobile',
       'Database Management',
       'API Integration',
-      'Version Control Systems',
-      'Test-Driven Development (TDD)',
-      'Debugging and Troubleshooting',
-      'Front-End Development',
-      'Back-End Development',
-      'Full-Stack Development',
-      'User Experience (UX) Design',
-      'Software Documentation',
+      'Git',
+      'TDD',
+      'Debugging',
+      'Front-End',
+      'Back-End',
+      'Full-Stack',
+      'Documentation',
       'Project Management',
-      'Problem-Solving Skills',
-      'Communication and Collaboration',
-      'Software Development Tools',
-      'Continuous Learning and Adaptability',
+      'Problem-Solving',
+      'Communication',
+      'Collaboration',
+      'Continuous Integration',
+      'Adaptability',
       'AWS',
       'Testing'
     ]
   end
+
 
   def cta
     'cta'
