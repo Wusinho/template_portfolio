@@ -4,8 +4,7 @@ class ReposController < ApplicationController
   def create
     readme = Repo.repo_info(repo_params[:name])
     render json: {
-      readme: readme,
-      repo_link: ApplicationController.render(partial: 'shared/repo_link', locals: { repo_link: repo_params[:link] })
+      repo_link: ApplicationController.render(partial: 'shared/selected_readme', locals: { link: repo_params[:link], readme: readme })
     }
   end
 

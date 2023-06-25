@@ -1,6 +1,7 @@
 <%= link_to repo_path(repo['name']), class: 'repo', data: {
   action: 'click->projects#click',
   projects_target: 'project_links',
+  projects_switch_value: false,
   name: repo['name'],
   link: repo['url']
 } do %>

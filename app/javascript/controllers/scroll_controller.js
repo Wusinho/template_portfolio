@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="scroll"
 export default class extends Controller {
 
-  static targets = ['navlinks', 'images']
+  static targets = ['navlinks', 'images', 'set_about_me']
   static values = { open: Boolean }
   static classes = ["opened"]
 
@@ -31,10 +31,8 @@ export default class extends Controller {
       return 'home';
     } else if (scrollPosition >= positions['projects'].beginning && scrollPosition < positions['projects'].end) {
       return 'projects';
-    } else if (scrollPosition >= positions['about-me'].beginning && scrollPosition < positions['about-me'].end) {
-      return 'about-me';
     } else {
-      return 'contact-me';
+      return 'about-me';
     }
   }
 
@@ -76,7 +74,7 @@ export default class extends Controller {
 
   activate_about_view(){
     if (this.current_active_link.dataset.target !== 'about-me') { return }
-    const about__container = document.getElementById('about__container')
+    const about__container = this.set_about_meTarget
     about__container.setAttribute('data-controller', 'about')
   }
 

@@ -1,8 +1,10 @@
-<div id="about__container">
-  <h2>About me</h2>
-  <div class="about-me__container" id="about__me" data-about-target="about_me">
-    <%= render 'shared/loader' %>
+<div data-scroll-target="set_about_me">
+  <%= render 'shared/loader' %>
+  <h2 class="d-none">About me</h2>
+  <div class="about__icons__container">
+    <div class="about-me__container" id="about__me" data-about-target="about_me"></div>
+    <div class="icons__container" data-about-target="icons">
+      <h2>Stack:</h2>
   </div>
-  <div class="icons__container" data-about-target="icons">
   </div>
 </div>

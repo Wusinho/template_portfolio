@@ -2,45 +2,97 @@
 
 .project__container {
   height: 100vh;
-  padding: 20px 0;
-  border-left: 1px solid $grey;
+  background-color: $back_ground_grey;
+  .bar {
+    height: 100%;
+    border-right: 1px solid $grey;
+  }
+
   h2 {
     margin-top: 0;
     margin-left: 10px;
   }
   .repos__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: $line_position 250px 1fr;
+    grid-template-areas: 'bar repos selected__repo';
     .repos {
       display: flex;
+      height: 100%;
       flex-direction: column;
       justify-content: space-evenly;
-      height: 100vh;
+
+      .active_repo {
+        background-color: $redish;
+        border-right: 1px solid $redish !important;
+        border-bottom: 1px solid $redish !important;
+        pointer-events: none;
+        h4 {
+          color: white !important;
+        }
+      }
       .repo {
         text-decoration: none;
+        border-right: 1px solid $grey;
+        border-bottom: 1px solid $grey;
+        transition: 1s ease;
+
+
+
+        &:hover {
+          background-color: $redish;
+          border-right: 1px solid $redish;
+          border-bottom: 1px solid $redish;
+          h4 {
+            color: white;
+          }
+        }
+
         h4 {
-          color: $font;
+          color: $grey;
           text-align: center;
           margin: 10px;
           width: 200px;
           padding: 10px;
-          border: 1px solid $primary_color;
         }
       }
     }
     .selected__repo {
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      .readme {
-        animation-name: readmeAnimation;
-        animation-duration: 1s;
-        animation-timing-function: ease;
+      margin: 0 50px;
+      .selected__readme {
+        position: relative;
+        border: 5px solid $font;
+        padding: 50px;
+        h1 {
+          color: $redish;
+        }
+        .top__triangle {
+          width: 20px;
+          height: 20px;
+          background-color: $redish;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+        .readme {
+          animation-name: readmeAnimation;
+          animation-duration: 1s;
+          animation-timing-function: ease;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+        .repo_link {
+          text-decoration: none;
+          color: $redish;
+        }
       }
-      .repo_link {
-        text-decoration: none;
-        color: $redish;
-      }
+
     }
   }
 

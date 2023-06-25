@@ -7,45 +7,64 @@
   place-items: center;
   position: relative;
 
+  .line {
+    z-index: 9999;
+    position: absolute;
+    left: 0;
+    width: $line_position;
+    height: 100%;
+    border-right: 1px solid $grey;
+    box-sizing: border-box;
+  }
+
   .back-ground__bio{
     top: 0;
     z-index: -1;
     font-family: 'Raleway', sans-serif;
-    font-weight: 100;
-    opacity: 0.04;
+    opacity: 0.03;
     position: absolute;
-    font-size: 130px;
+    font-size: 75px;
     pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .words {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding: 0 10px;
+    }
   }
 
   .left__triangle {
     position: absolute;
     left: 0;
-    bottom: 5%;
+    bottom: 60px;
     width: 0;
     height: 0;
     border-top: 60px solid transparent;
-    border-left: 60px solid $grey;
+    border-left: 60px solid $back_ground_grey;
   }
 
   .hero__box {
     position: absolute;
     bottom: 0;
-    height: 5%;
+    height: 60px;
     width: 100%;
-    background-color: $grey;
+    background-color: $back_ground_grey;
+
   }
 
   .right__triangle {
     position: absolute;
+    bottom: -90px;
     right: 0;
-    bottom: 0;
-    border-top: 69px solid $back_ground_color;
-    border-left: 69px solid $grey;
+    border-top: 151px solid $back_ground_color;
+    border-left: 151px solid $back_ground_grey;
   }
 
   .information__container {
-    max-width: 1091px;
+    max-width: 800px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -132,6 +151,9 @@
     .bio__container {
       display: flex;
       position: relative;
+      p {
+        text-align: justify;
+      }
 
       .box {
         width: 20px;
@@ -201,3 +223,31 @@
     opacity: 0;
   }
 }
+
+@media (min-width: 671px) and (max-width: 1000px) {
+  .hero__container .back-ground__bio {
+    font-size: 60px !important;
+  }
+}
+@media (min-width: 0px) and (max-width: 670px) {
+  .hero__container {
+    .information__container {
+      width: 500px;
+    }
+    .image__container {
+      width: 200px;
+      height: auto;
+    }
+
+    .display_names {
+      h1 {
+        font-size: 4rem !important;
+      }
+    }
+  }
+
+  .hero__container .back-ground__bio {
+    font-size: 50px !important;
+  }
+}
+

@@ -6,15 +6,12 @@
     <div class="project__container" data-scroll-target="projects" id='projects'>
       <%= render 'homepages/sections/projects', repos: @user['user']['pinnedItems']['nodes'] %>
     </div>
-    <div class="about__container container" data-scroll-target="about-me" id='about-me'>
+    <div class="about__container container" data-scroll-target="about-me"  id='about-me'>
       <%= render 'homepages/sections/about-me' %>
-    </div>
-    <div class="container" data-scroll-target="contact-me" id='contact-me'>
-      <%= render 'homepages/sections/contact-me' %>
     </div>
   </div>
   <aside>
-    <%= render 'homepages/sides/right_aside', user: @user %>
+    <%= render 'homepages/sides/navbar', user: @user %>
   </aside>
 </div>
 
